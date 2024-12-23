@@ -12,7 +12,7 @@ const AuthLayout = () => {
             <Navbar />
 
             {/* Main Content */}
-            <main className="flex-grow">
+            <main className="flex-grow bg-gray-100">
                 <Outlet />
             </main>
 

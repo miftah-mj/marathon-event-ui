@@ -1,55 +1,106 @@
-
+import { Link } from "react-router-dom";
 
 const Register = () => {
-
-
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-            <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
-                <h2 className="text-2xl font-bold text-center">Register</h2>
-                {/* {error && <p className="text-red-500">{error}</p>} */}
-                <form  className="space-y-4">
-                    <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
+            <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">
+                <form className="card-body">
+                    <div className="form-control">
+                        <h3 className="text-2xl text-accentDark font-semibold text-center pb-4">
+                            Register Now!
+                        </h3>
+                        {/* name */}
+                        <label className="label">
+                            <span className="label-text font-semibold">
+                                Full Name
+                            </span>
+                        </label>
                         <input
                             type="text"
-                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            className="input input-bordered"
                             required
-                            className="w-full px-3 py-2 mt-1 border rounded"
                         />
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                        {/* {error.name && (
+                            <label className="label text-accent text-sm">
+                                {error.name}
+                            </label>
+                        )} */}
+
+                        {/* photo */}
+                        <label className="label">
+                            <span className="label-text font-semibold">
+                                Photo URL
+                            </span>
+                        </label>
+                        <input
+                            type="url"
+                            name="photoUrl"
+                            placeholder="Enter your photo URL"
+                            className="input input-bordered"
+                            required
+                        />
+                        {/* {error.photoUrl && (
+                            <label className="label text-accent text-sm">
+                                {error.photoUrl}
+                            </label>
+                        )} */}
+                        {/* email */}
+                        <label className="label">
+                            <span className="label-text font-semibold">
+                                Email
+                            </span>
+                        </label>
                         <input
                             type="email"
-                            id="email"
+                            name="email"
+                            placeholder="email"
+                            className="input input-bordered"
                             required
-                            className="w-full px-3 py-2 mt-1 border rounded"
                         />
                     </div>
-                    <div>
-                        <label htmlFor="photoURL" className="block text-sm font-medium text-gray-700">Photo URL</label>
-                        <input
-                            type="text"
-                            id="photoURL"
-                            className="w-full px-3 py-2 mt-1 border rounded"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+
+                    <div className="form-control relative">
+                        <label className="label">
+                            <span className="label-text font-semibold">
+                                Password
+                            </span>
+                        </label>
                         <input
                             type="password"
-                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            className="input input-bordered"
                             required
-                            className="w-full px-3 py-2 mt-1 border rounded"
                         />
+                        <div
+                            className="absolute inset-y-14 right-0 pr-3 flex items-center cursor-pointer"
+                            // onClick={togglePasswordVisibility}
+                        ></div>
+                        {/* {error.password && (
+                            <p className="text-accent text-sm mt-2">
+                                {error.password}
+                            </p>
+                        )} */}
                     </div>
-                    <button type="submit" className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
-                        Register
-                    </button>
+
+                    <div className="form-control mt-6 space-y-2">
+                        <button className="btn bg-primary text-white px-6 py-2 rounded-full">
+                            Register
+                        </button>
+                        {/* sign up with google */}
+                        {/* <GoogleLogin /> */}
+                    </div>
                 </form>
                 <p className="text-center">
-                    Already have an account? <a href="/auth/signin" className="text-blue-500 hover:underline">Sign In</a>
+                    Already Have An Account?{" "}
+                    <Link
+                        to="/auth/signin"
+                        className="text-accent font-semibold hover:underline"
+                    >
+                        Sign in
+                    </Link>
                 </p>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Signin = () => {
     return (
         <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
-            <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+            <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">
                 <form className="card-body">
                     <div className="form-control">
                         <h3 className="text-2xl text-accentDark font-semibold text-center pb-4">
@@ -55,7 +55,7 @@ const Signin = () => {
                     </div>
 
                     <div className="form-control mt-6 space-y-2">
-                        <button className="btn btn-outline bg-secondary px-6 py-2 rounded-full">
+                        <button className="btn bg-primary text-white px-6 py-2 rounded-full">
                             Sign In
                         </button>
 
