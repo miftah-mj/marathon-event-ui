@@ -1,11 +1,56 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../components/GoogleLogin";
+import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Register = () => {
+    const { createUser } = useAuth();
+
+    const navigate = useNavigate();
+
+    const [error, setError] = useState({});
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+
+        const formData = e.target;
+        const email = formData.email.value;
+        const password = formData.password.value;
+        const name = formData.name.value;
+        const photo = formData.photoUrl.value;
+
+        // validate password
+        if (!passwordPattern.test(password)) {
+            setError({
+                password:
+                    "Password must be at least 6 characters long and contain at least one uppercase and one lowercase letter.",
+            });
+            return;
+        }
+        // console.log(email, password, name, photo);
+
+        createUser(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                // console.log(user);
+                navigate("/");
+            })
+            .catch((error) => {
+                // const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                // console.log(errorCode, errorMessage);
+                setError({ ...error, general: errorMessage });
+                toast.error(errorMessage);
+            });
+    };
+
     return (
         <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
             <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">
-                <form className="card-body">
+                <form  onSubmit={handleRegister} className="card-body">
                     <div className="form-control">
                         <h3 className="text-2xl text-accentDark font-semibold text-center pb-4">
                             Register Now!
@@ -23,11 +68,11 @@ const Register = () => {
                             className="input input-bordered"
                             required
                         />
-                        {/* {error.name && (
+                        {error.name && (
                             <label className="label text-accent text-sm">
                                 {error.name}
                             </label>
-                        )} */}
+                        )}
 
                         {/* photo */}
                         <label className="label">
@@ -42,11 +87,11 @@ const Register = () => {
                             className="input input-bordered"
                             required
                         />
-                        {/* {error.photoUrl && (
+                        {error.photoUrl && (
                             <label className="label text-accent text-sm">
                                 {error.photoUrl}
                             </label>
-                        )} */}
+                        )}
                         {/* email */}
                         <label className="label">
                             <span className="label-text font-semibold">
@@ -79,11 +124,11 @@ const Register = () => {
                             className="absolute inset-y-14 right-0 pr-3 flex items-center cursor-pointer"
                             // onClick={togglePasswordVisibility}
                         ></div>
-                        {/* {error.password && (
+                        {error.password && (
                             <p className="text-accent text-sm mt-2">
                                 {error.password}
                             </p>
-                        )} */}
+                        )}
                     </div>
 
                     <div className="form-control mt-6 space-y-2">

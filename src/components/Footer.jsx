@@ -1,13 +1,11 @@
+import logo from "../assets/logo.png";
+
 const Footer = () => {
     return (
         <div>
             <footer className="footer footer-center bg-background text-primary p-10">
                 <div className="flex flex-col items-center space-y-2">
-                    <img
-                        src="/path/to/logo.png"
-                        alt="Logo"
-                        className="w-16 h-16"
-                    />
+                    <img src={logo} alt="Logo" className="w-16 h-16" />
                     <h1 className="text-2xl font-bold">OnYourMark</h1>
                     <p className="text-center">
                         This is a brief description of the website. It provides
@@ -22,8 +20,8 @@ const Footer = () => {
                 </nav>
                 <div className="">
                     <p>
-                        &copy; {new Date().getFullYear()} OnYourMark. All
-                        rights reserved.
+                        &copy; {new Date().getFullYear()} OnYourMark. All rights
+                        reserved.
                     </p>
                 </div>
             </footer>

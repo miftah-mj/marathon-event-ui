@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
     const { user, signoutUser } = useAuth();
@@ -79,6 +80,7 @@ const Navbar = () => {
                     to="/"
                     className="text-2xl font-bold flex items-center gap-2"
                 >
+                    <img src={logo} alt="Logo" className="w-16 h-16" />
                     OnYourMark
                 </Link>
             </div>
