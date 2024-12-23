@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-center bg-base-200 text-base-content p-10">
+            <footer className="footer footer-center bg-background text-primary p-10">
                 <div className="flex flex-col items-center space-y-2">
                     <img
                         src="/path/to/logo.png"

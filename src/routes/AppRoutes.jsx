@@ -5,6 +5,9 @@ import AuthLayout from "../layouts/AuthLayout";
 import Register from "../pages/Auth/Register";
 import Signin from "../pages/Auth/Signin";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import AddMarathon from "../pages/Dashboard/AddMarathon";
+import MyMarathonList from "../pages/Dashboard/MyMarathonList";
+import MyApplyList from "../pages/Dashboard/MyApplyList";
 
 const AppRoutes = createBrowserRouter([
     {
@@ -18,7 +21,20 @@ const AppRoutes = createBrowserRouter([
             {
                 path: "dashboard",
                 element: <Dashboard />,
-                children: [],
+                children: [
+                    {
+                        path: "add-marathon",
+                        element: <AddMarathon />,
+                    },
+                    {
+                        path: "marathon-list",
+                        element: <MyMarathonList />,
+                    },
+                    {
+                        path: "apply-list",
+                        element: <MyApplyList />,
+                    },
+                ],
             },
         ],
     },

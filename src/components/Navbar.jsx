@@ -6,7 +6,7 @@ const Navbar = () => {
             <NavLink
                 to="/"
                 className={({ isActive }) =>
-                    `tab ${isActive ? "text-accent" : "hover:text-accent"}`
+                    `tab ${isActive ? "text-primary" : "hover:text-primary"}`
                 }
             >
                 Home
@@ -14,7 +14,7 @@ const Navbar = () => {
             <NavLink
                 to="/marathons"
                 className={({ isActive }) =>
-                    `tab ${isActive ? "text-accent" : "hover:text-accent"}`
+                    `tab ${isActive ? "text-primary" : "hover:text-primary"}`
                 }
             >
                 Marathons
@@ -22,7 +22,7 @@ const Navbar = () => {
             <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
-                    `tab ${isActive ? "text-accent" : "hover:text-accent"}`
+                    `tab ${isActive ? "text-primary" : "hover:text-primary"}`
                 }
             >
                 Dashboard
@@ -31,7 +31,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-background">
+        <div className="navbar bg-gray-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -63,7 +63,7 @@ const Navbar = () => {
                 </div>
                 <Link
                     to="/"
-                    className="text-2xl text-accentDark font-bold flex items-center gap-2"
+                    className="text-2xl font-bold flex items-center gap-2"
                 >
                     OnYourMark
                 </Link>
