@@ -5,10 +5,10 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
-
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth, googleProvider } from "../firebase/firebaseConfig";
+import PropTypes from "prop-types";
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -55,6 +55,10 @@ const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     );
+};
+
+AuthProvider.propTypes = {
+    children: PropTypes.node,
 };
 
 export default AuthProvider;

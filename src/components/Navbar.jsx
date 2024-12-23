@@ -1,6 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+    const { user, signoutUser } = useAuth();
+
+    const handleSignout = () => {
+        signoutUser()
+            .then(() => {
+                toast.success("Signed out successfully");
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
+    };
+
     const links = (
         <>
             <NavLink
@@ -72,13 +86,45 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">{links}</ul>
             </div>
             <div className="navbar-end">
-                <div className="flex items-center gap-4">
-                    <Link to="/auth/signin" className="btn btn-primary">
-                        Sign In
-                    </Link>
-                    <Link to="/auth/register" className="btn btn-secondary">
-                        Register
-                    </Link>
+                <div>
+                    {user && user?.email ? (
+                        <div className=" flex items-center gap-4">
+                            <div className="flex flex-col items-center">
+                                <img
+                                    src={
+                                        user?.photoURL ||
+                                        "https://i.ibb.co.com/P1n2z8D/profile-icon-design-free-vector.jpg"
+                                    }
+                                    alt="user"
+                                    className="w-10 h-10 rounded-full"
+                                />
+                                <p className="text-sm">{user?.displayName}</p>
+                            </div>
+
+                            <button
+                                onClick={handleSignout}
+                                className="btn btn-outline text-accent"
+                            >
+                                Log Out
+                            </button>
+                        </div>
+                    ) : (
+                        <div className=" flex items-center gap-4">
+                            <Link
+                                to="/auth/register"
+                                className="btn btn-outline text-accent"
+                            >
+                                Register
+                            </Link>
+
+                            <Link
+                                to="/auth/signin"
+                                className="btn btn-outline text-accent"
+                            >
+                                Sign In
+                            </Link>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
