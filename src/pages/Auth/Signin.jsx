@@ -1,11 +1,46 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../components/GoogleLogin";
+import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Signin = () => {
+    const { signinUser } = useAuth();
+    const [error, setError] = useState(null);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleSignin = (e) => {
+        e.preventDefault();
+
+        const formData = e.target;
+        const email = formData.email.value;
+        const password = formData.password.value;
+        // console.log(email, password);
+
+        signinUser(email, password)
+            .then((userCredential) => {
+                // Signed in
+                const userData = userCredential.userData;
+                console.log(userData);
+
+                const user = { email: email };
+
+
+                toast.success(`Welcome back, ${user?.displayName}!`);
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch((err) => {
+                setError({ ...error, login: err.code });
+                toast.error(err.message);
+            });
+    };
+
     return (
         <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
             <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">
-                <form className="card-body">
+                <form onSubmit={handleSignin} className="card-body">
                     <div className="form-control">
                         <h3 className="text-2xl text-accentDark font-semibold text-center pb-4">
                             Sign In Now!
@@ -39,11 +74,11 @@ const Signin = () => {
                             className="input input-bordered"
                             required
                         />
-                        {/* {error?.login && (
+                        {error?.login && (
                             <label className="label text-red-500 text-sm">
                                 {error.login}
                             </label>
-                        )} */}
+                        )}
 
                         <label className="label">
                             <Link
