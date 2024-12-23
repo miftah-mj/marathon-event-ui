@@ -20,20 +20,12 @@ const Navbar = () => {
                 Marathons
             </NavLink>
             <NavLink
-                to="/marathons"
+                to="/dashboard"
                 className={({ isActive }) =>
                     `tab ${isActive ? "text-accent" : "hover:text-accent"}`
                 }
             >
-                Marathons
-            </NavLink>
-            <NavLink
-                to="/marathons"
-                className={({ isActive }) =>
-                    `tab ${isActive ? "text-accent" : "hover:text-accent"}`
-                }
-            >
-                Marathons
+                Dashboard
             </NavLink>
         </>
     );

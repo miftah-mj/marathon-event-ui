@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import AuthLayout from "../layouts/AuthLayout";
 import Register from "../pages/Auth/Register";
 import Signin from "../pages/Auth/Signin";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 const AppRoutes = createBrowserRouter([
     {
@@ -13,6 +14,11 @@ const AppRoutes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
+            },
+            {
+                path: "dashboard",
+                element: <Dashboard />,
+                children: [],
             },
         ],
     },
