@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GoogleLogin from "../../components/GoogleLogin";
 
 const Signin = () => {
     return (
@@ -60,7 +61,7 @@ const Signin = () => {
                         </button>
 
                         {/* sign up with google */}
-                        {/* <GoogleLogin /> */}
+                        <GoogleLogin />
                     </div>
                 </form>
                 <p className="text-center">

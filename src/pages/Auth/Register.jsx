@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GoogleLogin from "../../components/GoogleLogin";
 
 const Register = () => {
     return (
@@ -90,7 +91,7 @@ const Register = () => {
                             Register
                         </button>
                         {/* sign up with google */}
-                        {/* <GoogleLogin /> */}
+                        <GoogleLogin />
                     </div>
                 </form>
                 <p className="text-center">
