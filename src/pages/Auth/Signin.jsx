@@ -23,10 +23,9 @@ const Signin = () => {
             .then((userCredential) => {
                 // Signed in
                 const userData = userCredential.userData;
-                console.log(userData);
+                // console.log(userData);
 
                 const user = { email: email };
-
 
                 toast.success(`Welcome back, ${user?.displayName}!`);
                 navigate(location?.state ? location.state : "/");

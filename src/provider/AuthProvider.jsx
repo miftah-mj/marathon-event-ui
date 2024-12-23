@@ -5,6 +5,7 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
+    updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth, googleProvider } from "../firebase/firebaseConfig";
@@ -23,10 +24,23 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
+    const updateUserProfile = async (profile) => {
+        if (auth.currentUser) {
+            await updateProfile(auth.currentUser, profile);
+            setUser({ ...auth.currentUser, ...profile });
+        }
+    };
 
-    const signinWithGoogle = () => {
+    const signinWithGoogle = async () => {
         setLoading(true);
-        return signInWithPopup(auth, googleProvider);
+        try {
+            const result = await signInWithPopup(auth, googleProvider);
+            setUser(result.user);
+        } catch (error) {
+            console.error("Error signing in with Google", error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const signoutUser = () => {
@@ -45,9 +59,11 @@ const AuthProvider = ({ children }) => {
 
     const authInfo = {
         user,
+        setUser,
         loading,
         createUser,
         signinUser,
+        updateUserProfile,
         signinWithGoogle,
         signoutUser,
     };

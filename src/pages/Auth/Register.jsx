@@ -5,7 +5,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 const Register = () => {
-    const { createUser } = useAuth();
+    const { createUser, setUser, updateUserProfile } = useAuth();
 
     const navigate = useNavigate();
 
@@ -35,7 +35,14 @@ const Register = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 // console.log(user);
-                navigate("/");
+                setUser(user);
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate("/");
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
             })
             .catch((error) => {
                 // const errorCode = error.code;
@@ -50,7 +57,7 @@ const Register = () => {
     return (
         <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
             <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">
-                <form  onSubmit={handleRegister} className="card-body">
+                <form onSubmit={handleRegister} className="card-body">
                     <div className="form-control">
                         <h3 className="text-2xl text-accentDark font-semibold text-center pb-4">
                             Register Now!
