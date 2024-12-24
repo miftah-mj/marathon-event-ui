@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import Modal from "../../components/Modal";
@@ -112,6 +113,12 @@ const MarathonData = ({ marathon, marathons, setMarathons }) => {
             )}
         </div>
     );
+};
+
+MarathonData.propTypes = {
+    marathon: PropTypes.object.isRequired,
+    marathons: PropTypes.array.isRequired,
+    setMarathons: PropTypes.func.isRequired,
 };
 
 export default MarathonData;

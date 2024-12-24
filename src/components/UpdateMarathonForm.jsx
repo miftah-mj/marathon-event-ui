@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const UpdateMarathonForm = ({ marathon, onSubmit }) => {
     const [updatedMarathon, setUpdatedMarathon] = useState(marathon);
@@ -59,6 +60,11 @@ const UpdateMarathonForm = ({ marathon, onSubmit }) => {
             </button>
         </form>
     );
+};
+
+UpdateMarathonForm.propTypes = {
+    marathon: PropTypes.object.isRequired,
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export default UpdateMarathonForm;

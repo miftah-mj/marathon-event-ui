@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Modal = ({ children, onClose }) => {
     return (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
@@ -9,6 +11,11 @@ const Modal = ({ children, onClose }) => {
             </div>
         </div>
     );
+};
+
+Modal.propTypes = {
+    children: PropTypes.node.isRequired,
+    onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;
