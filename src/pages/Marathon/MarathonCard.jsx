@@ -5,22 +5,34 @@ const MarathonCard = ({ marathon }) => {
     const {
         _id,
         marathonTitle,
+        marathonImage,
         location,
         startRegistrationDate,
         endRegistrationDate,
     } = marathon;
 
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg border p-4 bg-white">
+        <div className="rounded overflow-hidden shadow-lg border p-4 bg-white">
+            <div>
+                <img
+                    className="w-full h-56 object-cover"
+                    src={marathonImage}
+                    alt="event-image"
+                />
+            </div>
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{marathonTitle}</div>
                 <p className="text-gray-700 text-base">Location: {location}</p>
                 <p className="text-gray-700 text-base">
-                    Registration Dates: {startRegistrationDate}
+                    Registration Dates: {startRegistrationDate} -{" "}
+                    {endRegistrationDate}
                 </p>
             </div>
             <div className="px-6 pt-4 pb-2">
-                <Link to={`marathons/${_id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <Link
+                    to={`/marathons/${_id}`}
+                    className="btn bg-primary text-white font-bold px-4 rounded"
+                >
                     See Details
                 </Link>
             </div>

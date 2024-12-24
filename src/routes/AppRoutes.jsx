@@ -10,6 +10,8 @@ import MyMarathonList from "../pages/Dashboard/MyMarathonList";
 import MyApplyList from "../pages/Dashboard/MyApplyList";
 import PrivateRoute from "./PrivateRoute";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import Marathons from "../pages/Marathon/Marathons";
+import MarathonDetails from "../pages/Marathon/MarathonDetails";
 
 const AppRoutes = createBrowserRouter([
     {
@@ -19,6 +21,16 @@ const AppRoutes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
+            },
+            {
+                path: "marathons",
+                element: <Marathons />,
+            },
+            {
+                path: "marathons/:id",
+                element: <MarathonDetails />,
+                loader: ({ params }) =>
+                    fetch(`http://localhost:5000/marathonEvents/${params.id}`),
             },
             {
                 path: "dashboard",
