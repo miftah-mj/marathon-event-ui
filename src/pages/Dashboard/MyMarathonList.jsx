@@ -2,15 +2,20 @@ import { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import Modal from "../../components/Modal";
+import UpdateMarathonForm from "../../components/UpdateMarathonForm";
+import { useParams } from "react-router-dom";
 
 const MyMarathonList = () => {
     const { user } = useAuth();
-
+    const { _id } = useParams();
+    console.log(_id);
     const [marathons, setMarathons] = useState([]);
-    // console.log(marathons);
+    const [selectedMarathon, setSelectedMarathon] = useState(null);
+    const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/marathons`)
+        fetch(`http://localhost:5000/marathons}`)
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);
@@ -19,6 +24,41 @@ const MyMarathonList = () => {
                 console.error("Error:", error);
             });
     }, []);
+
+    const handleUpdateMarathon = (marathon) => {
+        setSelectedMarathon(marathon);
+        setIsUpdateModalOpen(true);
+    };
+
+    const handleUpdateSubmit = (updatedMarathon) => {
+        fetch(`http://localhost:5000/marathons/${_id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedMarathon),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                    setMarathons((prevMarathons) =>
+                        prevMarathons.map((marathon) =>
+                            marathon._id === updatedMarathon._id
+                                ? updatedMarathon
+                                : marathon
+                        )
+                    );
+                    toast.success("Marathon updated successfully!");
+                    setIsUpdateModalOpen(false);
+                } else {
+                    toast.error("Failed to update marathon");
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                toast.error("An error occurred while updating the marathon");
+            });
+    };
 
     const handleDeleteMarathon = (id) => {
         Swal.fire({
@@ -31,7 +71,7 @@ const MyMarathonList = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/marathons/${id}`, {
+                fetch(`http://localhost:5000/marathons/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -101,7 +141,10 @@ const MyMarathonList = () => {
                                 <td>{marathon.marathonStartDate}</td>
                                 <th>
                                     <div className="flex gap-2">
-                                        <button className="btn btn-primary btn-xs">
+                                        <button
+                                            onClick={handleUpdateMarathon}
+                                            className="btn btn-primary btn-xs"
+                                        >
                                             Update
                                         </button>
                                         <button
@@ -117,6 +160,14 @@ const MyMarathonList = () => {
                     </tbody>
                 </table>
             </div>
+            {isUpdateModalOpen && (
+                <Modal onClose={() => setIsUpdateModalOpen(false)}>
+                    <UpdateMarathonForm
+                        marathon={selectedMarathon}
+                        onSubmit={handleUpdateSubmit}
+                    />
+                </Modal>
+            )}
         </div>
     );
 };
