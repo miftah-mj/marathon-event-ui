@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyMarathonList = () => {
     const { user } = useAuth();
+
     const [marathons, setMarathons] = useState([]);
+    // console.log(marathons);
 
     useEffect(() => {
         fetch(`http://localhost:5000/marathons`)
@@ -15,7 +18,41 @@ const MyMarathonList = () => {
             .catch((error) => {
                 console.error("Error:", error);
             });
-    }, [user.email]);
+    }, []);
+
+    const handleDeleteMarathon = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/marathons/${id}`, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                "Deleted!",
+                                "Your marathon has been deleted.",
+                                "success"
+                            );
+                            setMarathons(
+                                marathons.filter(
+                                    (marathon) => marathon._id !== id
+                                )
+                            );
+                        }
+                    })
+                    .catch((error) => console.error("Error:", error));
+            }
+        });
+    };
 
     return (
         <div>
@@ -67,7 +104,10 @@ const MyMarathonList = () => {
                                         <button className="btn btn-primary btn-xs">
                                             Update
                                         </button>
-                                        <button className="btn btn-secondary btn-xs">
+                                        <button
+                                            onClick={handleDeleteMarathon}
+                                            className="btn btn-secondary btn-xs"
+                                        >
                                             Delete
                                         </button>
                                     </div>
