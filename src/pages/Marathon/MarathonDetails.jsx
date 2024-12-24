@@ -22,7 +22,8 @@ const MarathonDetails = () => {
         const now = new Date();
         const startDate = new Date(startRegistrationDate);
         const endDate = new Date(endRegistrationDate);
-        
+        console.log(now, startDate, endDate);
+        console.log(now >= startDate && now <= endDate);
         return now >= startDate && now <= endDate;
     };
 
@@ -47,6 +48,7 @@ const MarathonDetails = () => {
                 Registration Dates: {startRegistrationDate} -{" "}
                 {endRegistrationDate}
             </p>
+            <p className="text-lg mb-2">Marathon Date: {marathonStartDate}</p>
             <p className="text-lg mb-2">
                 Total Registrations: {totalRegistrationCount}
             </p>

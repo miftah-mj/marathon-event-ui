@@ -2,17 +2,17 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
     return (
-        <div className="py-10">
-            <header className="header p-4">
-                <h1 className="text-2xl font-semibold text-center">Dashboard</h1>
-            </header>
+        <div className="max-w-screen-xl mx-auto py-10">
+            <div className="grid grid-cols-12 gap-4 lg:gap-10">
+                <nav className="nav col-span-2 flex flex-col gap-4 items-start">
+                    <h1 className="text-3xl font-semibold text-center">
+                        Dashboard
+                    </h1>
 
-            <div className="flex gap-10 lg:gap-20 items-center">
-                <nav className="nav flex flex-col gap-4 items-start">
                     <NavLink
                         to="/dashboard/add-marathon"
                         className={({ isActive }) =>
-                            `tab text-lg ${
+                            `tab text-lg p-0 ${
                                 isActive ? "text-primary" : "hover:text-primary"
                             }`
                         }
@@ -22,7 +22,7 @@ const Dashboard = () => {
                     <NavLink
                         to="/dashboard/marathon-list"
                         className={({ isActive }) =>
-                            `tab text-lg ${
+                            `tab text-lg p-0 ${
                                 isActive ? "text-primary" : "hover:text-primary"
                             }`
                         }
@@ -32,7 +32,7 @@ const Dashboard = () => {
                     <NavLink
                         to="/dashboard/apply-list"
                         className={({ isActive }) =>
-                            `tab text-lg ${
+                            `tab text-lg p-0 ${
                                 isActive ? "text-primary" : "hover:text-primary"
                             }`
                         }
@@ -41,7 +41,7 @@ const Dashboard = () => {
                     </NavLink>
                 </nav>
 
-                <div>
+                <div className="col-span-10">
                     <Outlet />
                 </div>
             </div>
