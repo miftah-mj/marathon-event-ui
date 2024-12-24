@@ -26,7 +26,7 @@ const MarathonRegister = () => {
             additionalInfo,
         };
 
-        fetch("http://localhost:5000/marathonRegistrations", {
+        fetch("http://localhost:5000/registrations", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

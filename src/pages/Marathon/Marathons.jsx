@@ -5,7 +5,7 @@ const Marathons = () => {
     const [marathons, setMarathons] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/marathonEvents")
+        fetch("http://localhost:5000/marathons")
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);

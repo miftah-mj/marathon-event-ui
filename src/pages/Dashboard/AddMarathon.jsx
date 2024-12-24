@@ -58,7 +58,7 @@ const AddMarathon = () => {
     const handleAddMarathon = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:5000/marathonEvents", {
+        fetch("http://localhost:5000/marathons", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

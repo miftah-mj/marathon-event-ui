@@ -39,7 +39,7 @@ const AppRoutes = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/marathonEvents/${params.id}`),
+                    fetch(`http://localhost:5000/marathons/${params.id}`),
             },
             {
                 path: "marathon-register/:id",
@@ -49,7 +49,7 @@ const AppRoutes = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/marathonEvents/${params.id}`),
+                    fetch(`http://localhost:5000/marathons/${params.id}`),
             },
             {
                 path: "dashboard",
