@@ -5,7 +5,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 const Signin = () => {
-    const { signinUser } = useAuth();
+    const { signinUser, setUser } = useAuth();
     const [error, setError] = useState(null);
 
     const location = useLocation();
@@ -22,12 +22,10 @@ const Signin = () => {
         signinUser(email, password)
             .then((userCredential) => {
                 // Signed in
-                const userData = userCredential.userData;
-                // console.log(userData);
+                const user = userCredential.user;
+                setUser(user);
 
-                const user = { email: email };
-
-                toast.success(`Welcome back, ${user?.displayName}!`);
+                toast.success(`Welcome back, ${user?.displayName || "User"}`);
                 navigate(location?.state ? location.state : "/");
             })
             .catch((err) => {

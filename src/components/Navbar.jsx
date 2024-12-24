@@ -21,7 +21,7 @@ const Navbar = () => {
             <NavLink
                 to="/"
                 className={({ isActive }) =>
-                    `tab ${isActive ? "text-primary" : "hover:text-primary"}`
+                    `tab text-base ${isActive ? "text-primary" : "hover:text-primary"}`
                 }
             >
                 Home
@@ -29,7 +29,7 @@ const Navbar = () => {
             <NavLink
                 to="/marathons"
                 className={({ isActive }) =>
-                    `tab ${isActive ? "text-primary" : "hover:text-primary"}`
+                    `tab text-base ${isActive ? "text-primary" : "hover:text-primary"}`
                 }
             >
                 Marathons
@@ -37,7 +37,7 @@ const Navbar = () => {
             <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
-                    `tab ${isActive ? "text-primary" : "hover:text-primary"}`
+                    `tab text-base ${isActive ? "text-primary" : "hover:text-primary"}`
                 }
             >
                 Dashboard
@@ -71,7 +71,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-medium"
                     >
                         {links}
                     </ul>
@@ -85,7 +85,9 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">{links}</ul>
+                <ul className="menu menu-horizontal px-1 font-medium text-lg">
+                    {links}
+                </ul>
             </div>
             <div className="navbar-end">
                 <div>
