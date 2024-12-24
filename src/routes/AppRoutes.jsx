@@ -9,6 +9,7 @@ import AddMarathon from "../pages/Dashboard/AddMarathon";
 import MyMarathonList from "../pages/Dashboard/MyMarathonList";
 import MyApplyList from "../pages/Dashboard/MyApplyList";
 import PrivateRoute from "./PrivateRoute";
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 
 const AppRoutes = createBrowserRouter([
     {
@@ -59,7 +60,7 @@ const AppRoutes = createBrowserRouter([
     },
     {
         path: "*",
-        element: <h2 className="text-5xl">404 Not Found</h2>,
+        element: <NotFoundPage />,
     },
 ]);
 
