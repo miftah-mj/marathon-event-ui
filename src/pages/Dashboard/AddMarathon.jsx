@@ -7,6 +7,7 @@ import useAuth from "../../hooks/useAuth";
 
 const AddMarathon = () => {
     const { user } = useAuth();
+    console.log(user);
     const navigate = useNavigate();
     const [marathonDetails, setMarathonDetails] = useState({
         marathonTitle: "",
@@ -19,7 +20,11 @@ const AddMarathon = () => {
         marathonImage: "",
         createdAt: new Date(),
         totalRegistrationCount: 0,
+        // user who created the marathon
+        email: user?.email || "anonymous@example.com",
+        name: user?.displayName || "Anonymous",
     });
+    // console.log(marathonDetails);
 
     const formattedDetails = {
         ...marathonDetails,
@@ -33,6 +38,7 @@ const AddMarathon = () => {
             .toISOString()
             .split("T")[0],
     };
+    // console.log(formattedDetails);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
