@@ -64,11 +64,11 @@ const AppRoutes = createBrowserRouter([
                         element: <AddMarathon />,
                     },
                     {
-                        path: "marathon-list",
+                        path: "my-marathon-list",
                         element: <MyMarathonList />,
                     },
                     {
-                        path: "apply-list",
+                        path: "my-apply-list",
                         element: <MyApplyList />,
                     },
                 ],

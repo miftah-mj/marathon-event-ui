@@ -43,16 +43,45 @@ const MarathonRegister = () => {
             body: JSON.stringify(updatedRegistrationDetails),
         })
             .then((res) => res.json())
-            .then((updateData) => {
-                if (updateData.insertedId) {
-                    toast.success("Registration successful!");
-                    navigate("/dashboard");
+            .then((data) => {
+                if (data.insertedId) {
+                    // Update the total registration count
+                    fetch(
+                        `http://localhost:5000/marathonEvents/${_id}/updateRegistrationCount`,
+                        {
+                            method: "PATCH",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                totalRegistrationCount:
+                                    totalRegistrationCount + 1,
+                            }),
+                        }
+                    )
+                        .then((res) => res.json())
+                        .then((updateData) => {
+                            if (updateData.success) {
+                                toast.success("Registration successful!");
+                                navigate("/dashboard/my-apply");
+                            } else {
+                                toast.error(
+                                    "Failed to update registration count"
+                                );
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                            toast.error(
+                                "An error occurred while updating the registration count"
+                            );
+                        });
                 }
             })
             .catch((error) => {
                 console.error("Error:", error);
                 toast.error(
-                    "An error occurred while updating the registration count"
+                    "An error occurred while registering for the marathon"
                 );
             });
     };
@@ -135,7 +164,7 @@ const MarathonRegister = () => {
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-700">
-                        Additional Info (if any)
+                        Additional Info (Optional)
                     </label>
                     <textarea
                         name="additionalInfo"
