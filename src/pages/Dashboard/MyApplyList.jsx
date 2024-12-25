@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import UpdateRegistration from "./UpdateRegistration";
+import { Helmet } from "react-helmet-async";
 
 const MyApplyList = () => {
     const [registrations, setRegistrations] = useState([]);
@@ -55,8 +56,14 @@ const MyApplyList = () => {
     };
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-4">My Apply List</h1>
+        <div className=" mx-auto p-4">
+            <Helmet>
+                <title>OnYourMark | My Apply List</title>
+            </Helmet>
+
+            <h1 className="text-3xl font-bold text-center mb-4">
+                My Apply List
+            </h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     <thead>

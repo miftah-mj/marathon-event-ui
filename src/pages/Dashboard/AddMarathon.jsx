@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const AddMarathon = () => {
     const { user } = useAuth();
@@ -79,7 +80,13 @@ const AddMarathon = () => {
 
     return (
         <div className="max-w-3xl mx-auto p-4">
-            <h1 className="text-3xl font-bold text-center mb-4">Add Marathon</h1>
+            <Helmet>
+                <title>OnYourMark | Add Marathon</title>
+            </Helmet>
+
+            <h1 className="text-3xl font-bold text-center mb-4">
+                Add Marathon
+            </h1>
             <form onSubmit={handleAddMarathon}>
                 <div className="mb-4">
                     <label className="block text-gray-700">

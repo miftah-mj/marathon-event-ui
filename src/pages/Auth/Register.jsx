@@ -3,6 +3,7 @@ import GoogleLogin from "../../components/GoogleLogin";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { createUser, setUser, updateUserProfile } = useAuth();
@@ -56,6 +57,10 @@ const Register = () => {
 
     return (
         <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
+            <Helmet>
+                <title>OnYourMark | Register</title>
+            </Helmet>
+
             <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">
                 <form onSubmit={handleRegister} className="card-body">
                     <div className="form-control">

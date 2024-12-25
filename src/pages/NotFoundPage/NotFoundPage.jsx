@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { IoHome } from "react-icons/io5";
 
 const NotFoundPage = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+            <Helmet>
+                <title>OnYourMark | 404 Not Found</title>
+            </Helmet>
+
             <h2 className="text-5xl font-bold">404 Not Found</h2>
             <p className="mt-4 text-lg">
                 The page you are looking for does not exist.

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 // import useAuth from "../../hooks/useAuth";
 import MarathonData from "./MarathonData";
+import { Helmet } from "react-helmet-async";
 
 const MyMarathonList = () => {
     // const { user } = useAuth();
@@ -20,8 +21,12 @@ const MyMarathonList = () => {
     }, []);
 
     return (
-        <div>
-            <h2 className="text-2xl font-bold text-center mb-4">
+        <div className="mx-auto p-4">
+            <Helmet>
+                <title>OnYourMark | My Marathon List</title>
+            </Helmet>
+
+            <h2 className="text-3xl font-bold text-center mb-4">
                 My Marathon List
             </h2>
             <div className="overflow-x-auto">
