@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate, useLoaderData } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
@@ -5,9 +6,27 @@ import toast from "react-hot-toast";
 const MarathonRegister = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
-    const { _id, marathonTitle, marathonStartDate } = useLoaderData();
+    const { marathonTitle, marathonStartDate, _id, totalRegistrationCount } =
+        useLoaderData();
+    console.log(totalRegistrationCount);
 
-    const handleRegisterEvents = (e) => {
+    const [registrationDetails, setRegistrationDetails] = useState({
+        email: user?.email || "",
+        firstName: "",
+        lastName: "",
+        contactNumber: "",
+        additionalInfo: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setRegistrationDetails((prevDetails) => ({
+            ...prevDetails,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         const form = e.target;
@@ -37,12 +56,11 @@ const MarathonRegister = () => {
             .then((data) => {
                 if (data.insertedId) {
                     toast.success("Registered successfully");
-                    navigate("/");
+                    navigate("/dashboard/my-apply-list");
                 }
             })
             .catch((error) => {
                 console.error("Error:", error);
-                toast.error("Error:", error);
             });
     };
 
@@ -51,13 +69,14 @@ const MarathonRegister = () => {
             <h1 className="text-3xl font-bold mb-4">
                 Register for {marathonTitle}
             </h1>
-            <form onSubmit={handleRegisterEvents}>
+            <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label className="block text-gray-700">Email</label>
                     <input
                         type="email"
                         name="email"
-                        value={user?.email || ""}
+                        value={registrationDetails.email}
+                        onChange={handleChange}
                         className="w-full px-3 py-2 border rounded"
                         readOnly
                     />
@@ -91,6 +110,8 @@ const MarathonRegister = () => {
                     <input
                         type="text"
                         name="firstName"
+                        value={registrationDetails.firstName}
+                        onChange={handleChange}
                         className="w-full px-3 py-2 border rounded"
                         required
                     />
@@ -100,6 +121,8 @@ const MarathonRegister = () => {
                     <input
                         type="text"
                         name="lastName"
+                        value={registrationDetails.lastName}
+                        onChange={handleChange}
                         className="w-full px-3 py-2 border rounded"
                         required
                     />
@@ -111,16 +134,20 @@ const MarathonRegister = () => {
                     <input
                         type="text"
                         name="contactNumber"
+                        value={registrationDetails.contactNumber}
+                        onChange={handleChange}
                         className="w-full px-3 py-2 border rounded"
                         required
                     />
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-700">
-                        Additional Info (Optional)
+                        Additional Info
                     </label>
                     <textarea
                         name="additionalInfo"
+                        value={registrationDetails.additionalInfo}
+                        onChange={handleChange}
                         className="w-full px-3 py-2 border rounded"
                     />
                 </div>
