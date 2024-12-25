@@ -22,10 +22,10 @@ const MarathonDetails = () => {
         const now = new Date();
         const startDate = new Date(startRegistrationDate);
         const endDate = new Date(endRegistrationDate);
-        console.log('now: ', now);    
-        console.log('startDate: ', startDate);
-        console.log('endDate: ', endDate);
-        console.log(now >= startDate && now <= endDate);
+        // console.log('now: ', now);
+        // console.log('startDate: ', startDate);
+        // console.log('endDate: ', endDate);
+        // console.log(now >= startDate && now <= endDate);
         return now >= startDate && now <= endDate;
     };
 
@@ -47,7 +47,7 @@ const MarathonDetails = () => {
             />
             <p className="text-lg mb-2">Location: {location}</p>
             <p className="text-lg mb-2">
-                Registration Dates: {startRegistrationDate} - {" "}
+                Registration Dates: {startRegistrationDate} -{" "}
                 {endRegistrationDate}
             </p>
             <p className="text-lg mb-2">Marathon Date: {marathonStartDate}</p>

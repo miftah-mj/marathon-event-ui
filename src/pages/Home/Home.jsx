@@ -1,5 +1,6 @@
 import Slider from "../../components/Slider";
-import Marathons from "../Marathon/Marathons";
+import Marathons from "./Marathons";
+import UpcommingMarathons from "./UpcommingMarathons";
 
 const Home = () => {
     return (
@@ -8,6 +9,8 @@ const Home = () => {
                 <Slider />
 
                 <Marathons />
+
+                <UpcommingMarathons />
             </h1>
         </div>
     );

@@ -1,6 +1,5 @@
 import toast from "react-hot-toast";
 import Modal from "../../components/Modal";
-import UpdateRegistrationForm from "../../components/UpdateRegistrationForm";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -9,52 +8,59 @@ const UpdateRegistration = ({
     registrations,
     setRegistrations,
 }) => {
-    const { _id } = registration;
     const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
     const [updatedRegistration, setUpdatedRegistration] =
         useState(registration);
 
-    const { marathonTitle, marathonStartDate } = registration;
-
-    const handleUpdateRegistration = (id) => {
-        setIsUpdateModalOpen(true);
-    };
+    const { _id, marathonTitle, marathonStartDate } = registration;
+    console.log(_id, marathonTitle, marathonStartDate);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setUpdatedRegistration((prevDetails) => ({
-            ...prevDetails,
+        setUpdatedRegistration((prev) => ({
+            ...prev,
             [name]: value,
         }));
     };
 
-    const handleUpdateSubmit = (updatedRegistration) => {
-        fetch(`http://localhost:5000/registrations/${_id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedRegistration),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                const updatedRegistrations = registrations.map((registration) =>
-                    registration._id === _id ? data : registration
-                );
+    const handleUpdateRegistration = async () => {
+        try {
+            const response = await fetch(
+                `http://localhost:5000/registrations/${_id}`,
+                {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(updatedRegistration),
+                }
+            );
 
-                setRegistrations(updatedRegistrations);
-                setIsUpdateModalOpen(false);
-                toast.success("Registration updated successfully");
-            })
-            .catch(() => {
-                toast.error("Failed to update registration");
-            });
+            if (!response.ok) {
+                throw new Error("Failed to update registration");
+            }
+
+            const updatedData = await response.json();
+            toast.success("Registration updated successfully");
+
+            // Update local state with the updated registration
+            setRegistrations((prev) =>
+                prev.map((reg) =>
+                    reg._id === _id ? { ...reg, ...updatedData } : reg
+                )
+            );
+
+            setIsUpdateModalOpen(false);
+        } catch (error) {
+            console.error(error);
+            toast.error("Failed to update registration registration ");
+        }
     };
 
     return (
         <div>
             <button
-                onClick={() => handleUpdateRegistration(_id)}
+                onClick={() => setIsUpdateModalOpen(true)}
                 className="btn bg-primary text-white px-4 py-2 rounded-full"
             >
                 Update
@@ -62,12 +68,13 @@ const UpdateRegistration = ({
 
             {isUpdateModalOpen && (
                 <Modal onClose={() => setIsUpdateModalOpen(false)}>
-                    {/* <UpdateRegistrationForm
-                        registration={selectedRegistration}
-                        onSubmit={handleUpdateSubmit}
-                    /> */}
-
-                    <form onSubmit={handleUpdateSubmit} className="w-96">
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleUpdateRegistration();
+                        }}
+                        className="w-96"
+                    >
                         <div className="mb-4">
                             <label className="block text-gray-700">
                                 Marathon Title

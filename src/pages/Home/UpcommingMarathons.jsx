@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import MarathonCard from "./MarathonCard";
+import MarathonCard from "../Marathon/MarathonCard";
 
-const Marathons = () => {
+const UpcommingMarathons = () => {
     const [marathons, setMarathons] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/marathons")
+        fetch("http://localhost:5000/upcoming-marathons")
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);
@@ -16,16 +16,16 @@ const Marathons = () => {
     return (
         <div className="max-w-screen-xl mx-auto py-10">
             <h2 className="text-3xl font-semibold text-center">
-                Marathon Events
+                Upcoming Marathons
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
                 {marathons.map((marathon) => (
-                    <MarathonCard key={marathon.id} marathon={marathon} />
+                    <MarathonCard key={marathon._id} marathon={marathon} />
                 ))}
             </div>
         </div>
     );
 };
 
-export default Marathons;
+export default UpcommingMarathons;
