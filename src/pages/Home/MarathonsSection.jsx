@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import MarathonCard from "../Marathon/MarathonCard";
-import { Helmet } from "react-helmet-async";
 
-const AllMarathons = () => {
+const MarathonsSection = () => {
     const [marathons, setMarathons] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/marathons")
+        fetch("http://localhost:5000/marathons?limit=6")
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);
@@ -16,11 +15,8 @@ const AllMarathons = () => {
 
     return (
         <div className="max-w-screen-xl mx-auto py-10">
-            <Helmet>
-                <title>OnYourMark | Marathons</title>
-            </Helmet>
             <h2 className="text-3xl font-semibold text-center">
-                All Marathon Events
+                Marathon Events
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
@@ -32,4 +28,4 @@ const AllMarathons = () => {
     );
 };
 
-export default AllMarathons;
+export default MarathonsSection;

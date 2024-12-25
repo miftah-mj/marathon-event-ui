@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import Slider from "../../components/Slider";
-import Marathons from "./Marathons";
-import MarathonTips from "./MarathonTips";
+import MarathonsSection from "./MarathonsSection";
 import UpcommingMarathons from "./UpcommingMarathons";
+import MarathonTips from "./MarathonTips";
 
 const Home = () => {
     return (
@@ -11,7 +11,7 @@ const Home = () => {
                 <title>OnYourMark | Home</title>
             </Helmet>
             <Slider />
-            <Marathons />
+            <MarathonsSection />
             <UpcommingMarathons />
             <MarathonTips />
         </div>

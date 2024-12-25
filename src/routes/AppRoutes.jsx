@@ -12,7 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import MarathonDetails from "../pages/Marathon/MarathonDetails";
 import MarathonRegister from "../pages/Marathon/MarathonRegister";
-import AllMarathons from "../pages/Marathon/AllMarathons";
+import Marathons from "../pages/Marathon/Marathons";
 
 const AppRoutes = createBrowserRouter([
     {
@@ -27,7 +27,7 @@ const AppRoutes = createBrowserRouter([
                 path: "marathons",
                 element: (
                     <PrivateRoute>
-                        <AllMarathons />
+                        <Marathons />
                     </PrivateRoute>
                 ),
             },
