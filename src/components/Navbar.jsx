@@ -21,7 +21,9 @@ const Navbar = () => {
             <NavLink
                 to="/"
                 className={({ isActive }) =>
-                    `tab text-base ${isActive ? "text-primary" : "hover:text-primary"}`
+                    `tab text-base ${
+                        isActive ? "text-primary" : "hover:text-primary"
+                    }`
                 }
             >
                 Home
@@ -29,19 +31,26 @@ const Navbar = () => {
             <NavLink
                 to="/marathons"
                 className={({ isActive }) =>
-                    `tab text-base ${isActive ? "text-primary" : "hover:text-primary"}`
+                    `tab text-base ${
+                        isActive ? "text-primary" : "hover:text-primary"
+                    }`
                 }
             >
                 Marathons
             </NavLink>
-            <NavLink
-                to="/dashboard"
-                className={({ isActive }) =>
-                    `tab text-base ${isActive ? "text-primary" : "hover:text-primary"}`
-                }
-            >
-                Dashboard
-            </NavLink>
+
+            {user && user?.email ? (
+                <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                        `tab text-base ${
+                            isActive ? "text-primary" : "hover:text-primary"
+                        }`
+                    }
+                >
+                    Dashboard
+                </NavLink>
+            ) : null}
         </>
     );
 
@@ -71,16 +80,20 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-medium"
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow font-medium"
                     >
                         {links}
                     </ul>
                 </div>
                 <Link
                     to="/"
-                    className="text-2xl font-bold flex items-center gap-2"
+                    className="text-xl md:text-2xl font-bold flex items-center gap-2"
                 >
-                    <img src={logo} alt="Logo" className="w-16 h-16" />
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        className="w-12 h-12 lg:w-16 lg:h-16"
+                    />
                     OnYourMark
                 </Link>
             </div>

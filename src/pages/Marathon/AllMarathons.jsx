@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MarathonCard from "../Marathon/MarathonCard";
+import { Helmet } from "react-helmet-async";
 
 const AllMarathons = () => {
     const [marathons, setMarathons] = useState([]);
@@ -15,6 +16,9 @@ const AllMarathons = () => {
 
     return (
         <div className="max-w-screen-xl mx-auto py-10">
+            <Helmet>
+                <title>OnYourMark | Marathons</title>
+            </Helmet>
             <h2 className="text-3xl font-semibold text-center">
                 All Marathon Events
             </h2>

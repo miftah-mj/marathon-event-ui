@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const MarathonDetails = () => {
     const {
@@ -39,6 +40,10 @@ const MarathonDetails = () => {
 
     return (
         <div className="container mx-auto p-4">
+            <Helmet>
+                <title>OnYourMark | {marathonTitle}</title>
+            </Helmet>
+
             <h1 className="text-3xl font-bold mb-4">{marathonTitle}</h1>
             <img
                 src={marathonImage}
