@@ -6,9 +6,7 @@ import toast from "react-hot-toast";
 const MarathonRegister = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
-    const { marathonTitle, marathonStartDate, _id, totalRegistrationCount } =
-        useLoaderData();
-    console.log(totalRegistrationCount);
+    const { _id, marathonTitle, marathonStartDate } = useLoaderData();
 
     const [registrationDetails, setRegistrationDetails] = useState({
         email: user?.email || "",
@@ -28,7 +26,6 @@ const MarathonRegister = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const form = e.target;
         const email = form.email.value;
         const firstName = form.firstName.value;
@@ -38,6 +35,8 @@ const MarathonRegister = () => {
 
         const marathonRegister = {
             marathon_id: _id,
+            marathonTitle,
+            marathonStartDate,
             email,
             firstName,
             lastName,
@@ -56,7 +55,7 @@ const MarathonRegister = () => {
             .then((data) => {
                 if (data.insertedId) {
                     toast.success("Registered successfully");
-                    navigate("/dashboard/my-apply-list");
+                    navigate("/dashboard/my-applies");
                 }
             })
             .catch((error) => {

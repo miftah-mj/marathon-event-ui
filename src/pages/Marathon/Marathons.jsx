@@ -9,7 +9,7 @@ const Marathons = () => {
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);
-                console.log(data);
+                // console.log(data);
             });
     }, []);
 

@@ -20,7 +20,7 @@ const Dashboard = () => {
                         Add Marathon
                     </NavLink>
                     <NavLink
-                        to="/dashboard/my-marathon-list"
+                        to="/dashboard/my-marathons"
                         className={({ isActive }) =>
                             `tab text-lg p-0 ${
                                 isActive ? "text-primary" : "hover:text-primary"
@@ -30,7 +30,7 @@ const Dashboard = () => {
                         My Marathon List
                     </NavLink>
                     <NavLink
-                        to="/dashboard/my-apply-list"
+                        to="/dashboard/my-applies"
                         className={({ isActive }) =>
                             `tab text-lg p-0 ${
                                 isActive ? "text-primary" : "hover:text-primary"
