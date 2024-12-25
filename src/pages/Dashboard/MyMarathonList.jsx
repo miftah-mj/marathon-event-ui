@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import useAuth from "../../hooks/useAuth";
+// import useAuth from "../../hooks/useAuth";
 import MarathonData from "./MarathonData";
 
 const MyMarathonList = () => {
-    const { user } = useAuth();
+    // const { user } = useAuth();
 
     const [marathons, setMarathons] = useState([]);
-    console.log(marathons);
+    // console.log(marathons);
 
     useEffect(() => {
         fetch(`http://localhost:5000/marathons`)

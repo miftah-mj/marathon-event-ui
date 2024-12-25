@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 const UpdateMarathonForm = ({ marathon, onSubmit }) => {
     const [updatedMarathon, setUpdatedMarathon] = useState(marathon);
 
+    console.log("marathon ", marathon);
+    console.log("selectedMarathon", selectedMarathon);
+    console.log("updatedMarathon ", updatedMarathon);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUpdatedMarathon((prevDetails) => ({
@@ -24,7 +28,7 @@ const UpdateMarathonForm = ({ marathon, onSubmit }) => {
                 <input
                     type="text"
                     name="marathonTitle"
-                    value={updatedMarathon.marathonTitle}
+                    value={marathon.marathonTitle}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border rounded"
                     required

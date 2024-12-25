@@ -26,6 +26,7 @@ const MarathonRegister = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         const form = e.target;
         const email = form.email.value;
         const firstName = form.firstName.value;

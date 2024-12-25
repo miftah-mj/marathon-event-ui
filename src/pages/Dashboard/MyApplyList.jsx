@@ -1,20 +1,10 @@
 import { useState, useEffect } from "react";
-import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
-import Modal from "../../components/Modal";
-import UpdateRegistrationForm from "../../components/UpdateRegistrationForm";
-import { useParams } from "react-router-dom";
+import UpdateRegistration from "./UpdateRegistration";
 
 const MyApplyList = () => {
-    const { user } = useAuth();
-    // const { _id } = useParams();
-    // console.log(_id);
     const [registrations, setRegistrations] = useState([]);
-    const [selectedRegistration, setSelectedRegistration] = useState(null);
-    const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
-
-    console.log(registrations);
 
     useEffect(() => {
         fetch(`http://localhost:5000/registrations`)
@@ -26,46 +16,6 @@ const MyApplyList = () => {
                 console.error("Error:", error);
             });
     }, []);
-
-    const handleUpdateRegistration = (registration) => {
-        setSelectedRegistration(registration);
-        setIsUpdateModalOpen(true);
-    };
-
-    const handleUpdateSubmit = (updatedRegistration) => {
-        fetch(
-            `http://localhost:5000/registrations/${updatedRegistration._id}`,
-            {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(updatedRegistration),
-            }
-        )
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.modifiedCount > 0) {
-                    setRegistrations((prevRegistrations) =>
-                        prevRegistrations.map((registration) =>
-                            registration._id === updatedRegistration._id
-                                ? updatedRegistration
-                                : registration
-                        )
-                    );
-                    toast.success("Registration updated successfully!");
-                    setIsUpdateModalOpen(false);
-                } else {
-                    toast.error("Failed to update registration");
-                }
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                toast.error(
-                    "An error occurred while updating the registration"
-                );
-            });
-    };
 
     const handleDeleteRegistration = (id) => {
         Swal.fire({
@@ -130,41 +80,30 @@ const MyApplyList = () => {
                                 <td>{registration.contactNumber}</td>
                                 <td>{registration.additionalInfo}</td>
                                 <td>
-                                    <button
-                                        onClick={() =>
-                                            handleUpdateRegistration(
-                                                registration
-                                            )
-                                        }
-                                        className="btn bg-blue-500 text-white px-4 py-2 rounded mr-2"
-                                    >
-                                        Update
-                                    </button>
-                                    <button
-                                        onClick={() =>
-                                            handleDeleteRegistration(
-                                                registration._id
-                                            )
-                                        }
-                                        className="btn bg-red-500 text-white px-4 py-2 rounded"
-                                    >
-                                        Delete
-                                    </button>
+                                    <div className="flex gap-2">
+                                        <UpdateRegistration
+                                            registration={registration}
+                                            registrations={registrations}
+                                            setRegistrations={setRegistrations}
+                                        />
+
+                                        <button
+                                            onClick={() =>
+                                                handleDeleteRegistration(
+                                                    registration._id
+                                                )
+                                            }
+                                            className="btn bg-primary text-white px-4 py-2 rounded-full"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
-
-            {isUpdateModalOpen && (
-                <Modal onClose={() => setIsUpdateModalOpen(false)}>
-                    <UpdateRegistrationForm
-                        registration={selectedRegistration}
-                        onSubmit={handleUpdateSubmit}
-                    />
-                </Modal>
-            )}
         </div>
     );
 };

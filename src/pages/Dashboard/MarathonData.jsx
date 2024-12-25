@@ -7,7 +7,7 @@ import UpdateMarathonForm from "../../components/UpdateMarathonForm";
 
 const MarathonData = ({ marathon, marathons, setMarathons }) => {
     const { _id } = marathon;
-    console.log(_id);
+    console.log("marathon id", _id);
 
     const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
     const [selectedMarathon, setSelectedMarathon] = useState({});
@@ -107,6 +107,7 @@ const MarathonData = ({ marathon, marathons, setMarathons }) => {
                 <Modal onClose={() => setIsUpdateModalOpen(false)}>
                     <UpdateMarathonForm
                         marathon={selectedMarathon}
+                        // selectedMarathon={selectedMarathon}
                         onSubmit={handleUpdateSubmit}
                     />
                 </Modal>
