@@ -16,7 +16,7 @@ const AllMarathons = () => {
     return (
         <div className="max-w-screen-xl mx-auto py-10">
             <h2 className="text-3xl font-semibold text-center">
-                Marathon Events
+                All Marathon Events
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
