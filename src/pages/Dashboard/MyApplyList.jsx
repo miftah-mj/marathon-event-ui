@@ -3,12 +3,26 @@ import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import UpdateRegistration from "./UpdateRegistration";
 import { Helmet } from "react-helmet-async";
+import useAuth from "../../hooks/useAuth";
 
 const MyApplyList = () => {
+    const { user } = useAuth();
     const [registrations, setRegistrations] = useState([]);
+    const [searchTitle, setSearchTitle] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/registrations`)
+        if (user) {
+            fetchRegistrations();
+        }
+    }, [user, searchTitle]);
+
+    const fetchRegistrations = () => {
+        const query = new URLSearchParams({ userId: user.uid });
+        if (searchTitle) {
+            query.append("title", searchTitle);
+        }
+
+        fetch(`http://localhost:5000/registrations?${query.toString()}`)
             .then((res) => res.json())
             .then((data) => {
                 setRegistrations(data);
@@ -16,7 +30,7 @@ const MyApplyList = () => {
             .catch((error) => {
                 console.error("Error:", error);
             });
-    }, []);
+    };
 
     const handleDeleteRegistration = (id) => {
         Swal.fire({
@@ -56,7 +70,7 @@ const MyApplyList = () => {
     };
 
     return (
-        <div className=" mx-auto p-4">
+        <div className="mx-auto p-4">
             <Helmet>
                 <title>OnYourMark | My Apply List</title>
             </Helmet>
@@ -64,6 +78,17 @@ const MyApplyList = () => {
             <h1 className="text-3xl font-bold text-center mb-4">
                 My Apply List
             </h1>
+
+            <div className="mb-4">
+                <input
+                    type="text"
+                    placeholder="Search by Marathon Title"
+                    value={searchTitle}
+                    onChange={(e) => setSearchTitle(e.target.value)}
+                    className="w-full px-3 py-2 border rounded"
+                />
+            </div>
+
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     <thead>

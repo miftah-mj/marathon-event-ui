@@ -9,7 +9,7 @@ const Dashboard = () => {
             </Helmet>
 
             <div className="lg:grid lg:grid-cols-12 gap-4 lg:gap-10">
-                <nav className="nav col-span-2 flex flex-col gap-4 items-start">
+                <nav className="nav col-span-2 flex flex-col gap-4 items-start border-r border-gray-500 font-medium">
                     <h1 className="text-3xl font-semibold text-center">
                         Dashboard
                     </h1>
