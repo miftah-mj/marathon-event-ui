@@ -10,11 +10,11 @@ const ApplyData = ({ registration, registrations, setRegistrations }) => {
     console.log("reg id", _id);
 
     const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
-    const [selectedMarathon, setSelectedMarathon] = useState({});
-    // console.log(selectedMarathon);
+    const [selectedRegistration, setSelectedRegistration] = useState({});
+    // console.log(selectedRegistration);
 
     const handleUpdateRegistration = (registration) => {
-        setSelectedMarathon(registration);
+        setSelectedRegistration(registration);
         setIsUpdateModalOpen(true);
     };
 
@@ -57,9 +57,12 @@ const ApplyData = ({ registration, registrations, setRegistrations }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://marathon-event-api.vercel.app/registrations/${_id}`, {
-                    method: "DELETE",
-                })
+                fetch(
+                    `https://marathon-event-api.vercel.app/registrations/${_id}`,
+                    {
+                        method: "DELETE",
+                    }
+                )
                     .then((res) => res.json())
                     .then((data) => {
                         if (data.deletedCount > 0) {
@@ -109,13 +112,19 @@ const ApplyData = ({ registration, registrations, setRegistrations }) => {
             {isUpdateModalOpen && (
                 <Modal onClose={() => setIsUpdateModalOpen(false)}>
                     <UpdateRegistrationForm
-                        marathon={selectedMarathon}
+                        registration={selectedRegistration}
                         onSubmit={handleUpdateSubmit}
                     />
                 </Modal>
             )}
         </div>
     );
+};
+
+ApplyData.propTypes = {
+    registration: PropTypes.object.isRequired,
+    registrations: PropTypes.array.isRequired,
+    setRegistrations: PropTypes.func.isRequired,
 };
 
 export default ApplyData;

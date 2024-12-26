@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import Modal from "../../components/Modal";
 import ApplyData from "./ApplyData";
-import { GiTripleClaws } from "react-icons/gi";
 
 const MyApplyList = () => {
     const { user } = useAuth();
     const [registrations, setRegistrations] = useState([]);
     const [searchTitle, setSearchTitle] = useState("");
-    const [selectedRegistration, setSelectedRegistration] = useState(null);
 
     const axiosSecure = useAxiosSecure();
 
@@ -193,13 +189,11 @@ const MyApplyList = () => {
                                     registration={registration}
                                     registrations={registrations}
                                     setRegistrations={setRegistrations}
-                                    
                                 />
                             ))}
                     </tbody>
                 </table>
             </div>
-
         </div>
     );
 };
