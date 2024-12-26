@@ -64,7 +64,7 @@ const Register = () => {
             <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">
                 <form onSubmit={handleRegister} className="card-body">
                     <div className="form-control">
-                        <h3 className="text-2xl text-accentDark font-semibold text-center pb-4">
+                        <h3 className="text-2xl text-textPrimary font-raleway font-semibold text-center pb-4">
                             Register Now!
                         </h3>
                         {/* name */}
@@ -81,7 +81,7 @@ const Register = () => {
                             required
                         />
                         {error.name && (
-                            <label className="label text-accent text-sm">
+                            <label className="label text-red-600 text-sm">
                                 {error.name}
                             </label>
                         )}
@@ -100,7 +100,7 @@ const Register = () => {
                             required
                         />
                         {error.photoUrl && (
-                            <label className="label text-accent text-sm">
+                            <label className="label text-red-600 text-sm">
                                 {error.photoUrl}
                             </label>
                         )}
@@ -137,14 +137,14 @@ const Register = () => {
                             // onClick={togglePasswordVisibility}
                         ></div>
                         {error.password && (
-                            <p className="text-accent text-sm mt-2">
+                            <p className="text-red-600 text-sm mt-2">
                                 {error.password}
                             </p>
                         )}
                     </div>
 
                     <div className="form-control mt-6 space-y-2">
-                        <button className="btn btn-outline text-primary px-6 py-2 rounded-full">
+                        <button className="btn btn-outline text-secondary px-6 py-2 rounded-full">
                             Register
                         </button>
                         {/* sign up with google */}

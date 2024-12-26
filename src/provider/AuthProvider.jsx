@@ -10,6 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { auth, googleProvider } from "../firebase/firebaseConfig";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -51,7 +52,31 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            setLoading(false);
+
+            if (currentUser?.email) {
+                const user = { email: currentUser.email };
+
+                axios
+                    .post("http://localhost:5000/jwt", user, {
+                        withCredentials: true,
+                    })
+                    .then((res) => {
+                        console.log("login", res.data);
+                        setLoading(false);
+                    });
+            } else {
+                axios
+                    .post(
+                        "http://localhost:5000/logout",
+                        {},
+                        { withCredentials: true }
+                    )
+                    .then((res) => {
+                        console.log("logout", res.data);
+                        setLoading(false);
+                    })
+                    .catch((error) => console.log(error));
+            }
         });
 
         return () => unsubscribe();

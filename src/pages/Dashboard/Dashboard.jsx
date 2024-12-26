@@ -18,7 +18,7 @@ const Dashboard = () => {
                         to="/dashboard/add-marathon"
                         className={({ isActive }) =>
                             `tab text-lg p-0 ${
-                                isActive ? "text-primary" : "hover:text-primary"
+                                isActive ? "text-secondary" : "hover:text-secondary"
                             }`
                         }
                     >
@@ -28,7 +28,7 @@ const Dashboard = () => {
                         to="/dashboard/my-marathons"
                         className={({ isActive }) =>
                             `tab text-lg p-0 ${
-                                isActive ? "text-primary" : "hover:text-primary"
+                                isActive ? "text-secondary" : "hover:text-secondary"
                             }`
                         }
                     >
@@ -38,7 +38,7 @@ const Dashboard = () => {
                         to="/dashboard/my-applies"
                         className={({ isActive }) =>
                             `tab text-lg p-0 ${
-                                isActive ? "text-primary" : "hover:text-primary"
+                                isActive ? "text-secondary" : "hover:text-secondary"
                             }`
                         }
                     >

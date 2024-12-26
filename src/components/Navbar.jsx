@@ -22,7 +22,7 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) =>
                     `tab text-base ${
-                        isActive ? "text-primary" : "hover:text-primary"
+                        isActive ? "text-secondary" : "hover:text-secondary"
                     }`
                 }
             >
@@ -32,7 +32,7 @@ const Navbar = () => {
                 to="/marathons"
                 className={({ isActive }) =>
                     `tab text-base ${
-                        isActive ? "text-primary" : "hover:text-primary"
+                        isActive ? "text-secondary" : "hover:text-secondary"
                     }`
                 }
             >
@@ -44,7 +44,7 @@ const Navbar = () => {
                     to="/dashboard"
                     className={({ isActive }) =>
                         `tab text-base ${
-                            isActive ? "text-primary" : "hover:text-primary"
+                            isActive ? "text-secondary" : "hover:text-secondary"
                         }`
                     }
                 >
@@ -87,14 +87,16 @@ const Navbar = () => {
                 </div>
                 <Link
                     to="/"
-                    className="text-xl md:text-2xl font-bold flex items-center gap-2"
+                    className="text-xl text-textPrimary md:text-2xl font-bold flex items-center gap-2"
                 >
                     <img
                         src={logo}
                         alt="Logo"
                         className="w-12 h-12 lg:w-16 lg:h-16"
                     />
-                    OnYourMark
+                    <h2>
+                        On<span className="text-secondary">YourMark</span>
+                    </h2>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -120,7 +122,7 @@ const Navbar = () => {
 
                             <button
                                 onClick={handleSignout}
-                                className="btn btn-outline text-primary bg-white/30"
+                                className="btn btn-outline text-secondary bg-white/30"
                             >
                                 Log Out
                             </button>
@@ -129,14 +131,14 @@ const Navbar = () => {
                         <div className=" flex items-center gap-4">
                             <Link
                                 to="/auth/register"
-                                className="btn btn-outline text-primary bg-white/30"
+                                className="btn btn-outline text-secondary bg-white/30"
                             >
                                 Register
                             </Link>
 
                             <Link
                                 to="/auth/signin"
-                                className="btn btn-outline text-primary bg-white/30"
+                                className="btn btn-outline text-secondary bg-white/30"
                             >
                                 Sign In
                             </Link>

@@ -41,7 +41,7 @@ const Slider = () => {
                 <div className="w-full h-96">
                     <img
                         className="w-full h-full object-cover"
-                        src="https://i.ibb.co.com/YWFj8Kt/group-marathon-runners-abstract-swirl-backgr-21317626.jpg"
+                        src="https://i.ibb.co.com/t3zVcPy/i-E2e8-Qm-T5r-U75-D7-RGCs26-1200-80.jpg"
                         alt="slide-2"
                     />
                 </div>
@@ -50,7 +50,7 @@ const Slider = () => {
                 <div className="w-full h-96">
                     <img
                         className="w-full h-full object-cover"
-                        src="https://i.ibb.co.com/ZSHT014/images-q-tbn-ANd9-Gc-R1-Z7q8pn3zwe2qa-N-7-b-IWQOe-O7-Ej-Lp-NCDc-A-s.jpg"
+                        src="https://i.ibb.co.com/QbX6wn6/marathon-header.jpg"
                         alt="slide-3"
                     />
                 </div>
@@ -59,7 +59,7 @@ const Slider = () => {
                 <div className="w-full h-96">
                     <img
                         className="w-full h-full object-cover"
-                        src="https://i.ibb.co.com/wr0Hgvm/images-q-tbn-ANd9-Gc-RQq4-Nmj8-Gn-O5-K2-RPk-CVof1h-R4-Wc-Ku-On9-OPQ-s.jpg"
+                        src="https://i.ibb.co.com/B4G8h3D/sr-lcw-220924-199.jpg"
                         alt="slide-4"
                     />
                 </div>
