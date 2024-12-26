@@ -8,6 +8,9 @@ export default {
             colors: {
                 primary: "#724598",
                 background: "#EBEBEB",
+                textPrimary: "#1F2937",
+                textSecondary: "#4B5563",
+                textAccent: "#EED700",
             },
             fontFamily: {
                 nunito: ["Nunito", "sans-serif"],

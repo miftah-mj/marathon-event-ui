@@ -3,6 +3,7 @@ import Slider from "../../components/Slider";
 import MarathonsSection from "./MarathonsSection";
 import UpcommingMarathons from "./UpcommingMarathons";
 import MarathonTips from "./MarathonTips";
+import About from "./About";
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
                 <title>OnYourMark | Home</title>
             </Helmet>
             <Slider />
+            <About />
             <MarathonsSection />
             <UpcommingMarathons />
             <MarathonTips />
