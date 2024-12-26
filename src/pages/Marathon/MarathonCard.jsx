@@ -9,6 +9,7 @@ const MarathonCard = ({ marathon }) => {
         location,
         startRegistrationDate,
         endRegistrationDate,
+        marathonStartDate,
     } = marathon;
 
     return (
@@ -26,6 +27,9 @@ const MarathonCard = ({ marathon }) => {
                 <p className="text-gray-700 text-base">
                     Registration Dates: {startRegistrationDate} -{" "}
                     {endRegistrationDate}
+                </p>
+                <p className="text-gray-700 text-base">
+                    Marathon Starts: {marathonStartDate}
                 </p>
             </div>
             <div className="px-6 pt-4 pb-2">

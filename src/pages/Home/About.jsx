@@ -3,7 +3,7 @@ import { TbShoe } from "react-icons/tb";
 
 const About = () => {
     return (
-        <div className="max-w-screen-xl mx-auto flex gap-6 bg-white px-6 md:px-0 py-20">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 bg-white px-6 lg:px-0 py-20">
             {/* image Section */}
             <div className="md:flex-1">
                 <img

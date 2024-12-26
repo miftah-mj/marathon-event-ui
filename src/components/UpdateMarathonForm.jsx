@@ -5,7 +5,6 @@ const UpdateMarathonForm = ({ marathon, onSubmit }) => {
     const [updatedMarathon, setUpdatedMarathon] = useState(marathon);
 
     console.log("marathon ", marathon);
-    console.log("selectedMarathon", selectedMarathon);
     console.log("updatedMarathon ", updatedMarathon);
 
     const handleChange = (e) => {

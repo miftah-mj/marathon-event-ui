@@ -2,16 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 const UpdateRegistrationForm = ({ registration, onSubmit }) => {
-    const [updatedRegistration, setUpdatedRegistration] =
-        useState(registration);
-
-    const { _id, marathonTitle, marathonStartDate } = registration;
-    console.log("id ", _id);
-    console.log("marathonTitle ", marathonTitle);
-    console.log("marathonStartDate ", marathonStartDate);
-
-    console.log("registration ", registration);
-    console.log("updatedRegistration ", updatedRegistration);
+    const [updatedRegistration, setUpdatedRegistration] = useState(registration);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,28 +20,6 @@ const UpdateRegistrationForm = ({ registration, onSubmit }) => {
 
     return (
         <form onSubmit={handleSubmit} className="w-96">
-            <div className="mb-4">
-                <label className="block text-gray-700">Marathon Title</label>
-                <input
-                    type="text"
-                    name="marathonTitle"
-                    defaultValue={marathonTitle}
-                    className="w-full px-3 py-2 border rounded"
-                    readOnly
-                />
-            </div>
-            <div className="mb-4">
-                <label className="block text-gray-700">
-                    Marathon Start Date
-                </label>
-                <input
-                    type="text"
-                    name="marathonStartDate"
-                    defaultValue={marathonStartDate}
-                    className="w-full px-3 py-2 border rounded"
-                    readOnly
-                />
-            </div>
             <div className="mb-4">
                 <label className="block text-gray-700">First Name</label>
                 <input
@@ -102,6 +71,7 @@ const UpdateRegistrationForm = ({ registration, onSubmit }) => {
         </form>
     );
 };
+
 UpdateRegistrationForm.propTypes = {
     registration: PropTypes.object.isRequired,
     onSubmit: PropTypes.func.isRequired,

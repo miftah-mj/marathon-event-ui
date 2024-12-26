@@ -4,7 +4,7 @@ const MarathonTips = () => {
     const [tips, setTips] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/marathonTips")
+        fetch("https://marathon-event-api.vercel.app/marathonTips")
             .then((res) => res.json())
             .then((data) => {
                 setTips(data);

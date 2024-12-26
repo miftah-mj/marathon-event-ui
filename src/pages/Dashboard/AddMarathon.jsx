@@ -59,7 +59,7 @@ const AddMarathon = () => {
     const handleAddMarathon = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:5000/marathons", {
+        fetch("https://marathon-event-api.vercel.app/marathons", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

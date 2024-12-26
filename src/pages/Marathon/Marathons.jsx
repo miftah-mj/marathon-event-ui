@@ -7,7 +7,7 @@ const Marathons = () => {
     const [sortOrder, setSortOrder] = useState("desc");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/marathons?sort=${sortOrder}`)
+        fetch(`https://marathon-event-api.vercel.app/marathons?sort=${sortOrder}`)
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);

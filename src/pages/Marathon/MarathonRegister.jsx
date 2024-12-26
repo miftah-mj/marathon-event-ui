@@ -45,7 +45,7 @@ const MarathonRegister = () => {
             additionalInfo,
         };
 
-        fetch("http://localhost:5000/registrations", {
+        fetch("https://marathon-event-api.vercel.app/registrations", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

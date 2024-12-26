@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
                 const user = { email: currentUser.email };
 
                 axios
-                    .post("http://localhost:5000/jwt", user, {
+                    .post("https://marathon-event-api.vercel.app/jwt", user, {
                         withCredentials: true,
                     })
                     .then((res) => {
@@ -67,7 +67,7 @@ const AuthProvider = ({ children }) => {
             } else {
                 axios
                     .post(
-                        "http://localhost:5000/logout",
+                        "https://marathon-event-api.vercel.app/logout",
                         {},
                         { withCredentials: true }
                     )
