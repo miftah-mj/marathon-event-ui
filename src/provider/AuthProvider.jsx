@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
         }
     };
 
-    const signoutUser = () => {
+    const signOutUser = () => {
         setLoading(true);
         return signOut(auth);
     };
@@ -90,7 +90,7 @@ const AuthProvider = ({ children }) => {
         signinUser,
         updateUserProfile,
         signinWithGoogle,
-        signoutUser,
+        signOutUser,
     };
 
     return (

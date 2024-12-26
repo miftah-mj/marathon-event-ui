@@ -4,10 +4,10 @@ import toast from "react-hot-toast";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-    const { user, signoutUser } = useAuth();
+    const { user, signOutUser } = useAuth();
 
     const handleSignout = () => {
-        signoutUser()
+        signOutUser()
             .then(() => {
                 toast.success("Signed out successfully");
             })

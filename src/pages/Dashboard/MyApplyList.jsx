@@ -4,17 +4,22 @@ import Swal from "sweetalert2";
 import UpdateRegistration from "./UpdateRegistration";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyApplyList = () => {
     const { user } = useAuth();
     const [registrations, setRegistrations] = useState([]);
     const [searchTitle, setSearchTitle] = useState("");
 
+    console.log(registrations);
+
+    const axiosSecure = useAxiosSecure();
+
     useEffect(() => {
         if (user) {
             fetchRegistrations();
         }
-    }, [user, searchTitle]);
+    }, [user.email, axiosSecure, searchTitle]);
 
     const fetchRegistrations = () => {
         const query = new URLSearchParams({ userId: user.uid });
@@ -22,14 +27,19 @@ const MyApplyList = () => {
             query.append("title", searchTitle);
         }
 
-        fetch(`http://localhost:5000/registrations?${query.toString()}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setRegistrations(data);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
+        // fetch(`http://localhost:5000/registrations?email=${user.email}?${query.toString()}`)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         setRegistrations(data);
+        //     })
+        //     .catch((error) => {
+        //         console.error("Error:", error);
+        //     });
+
+        // * Using axios with custom hook
+        axiosSecure
+            .get(`/registrations?email=${user.email}?${query.toString()}`)
+            .then((res) => setRegistrations(res.data));
     };
 
     const handleDeleteRegistration = (id) => {
@@ -103,36 +113,39 @@ const MyApplyList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {registrations.map((registration) => (
-                            <tr key={registration._id}>
-                                <td>{registration.marathonTitle}</td>
-                                <td>{registration.marathonStartDate}</td>
-                                <td>{registration.firstName}</td>
-                                <td>{registration.lastName}</td>
-                                <td>{registration.contactNumber}</td>
-                                <td>{registration.additionalInfo}</td>
-                                <td>
-                                    <div className="flex gap-2">
-                                        <UpdateRegistration
-                                            registration={registration}
-                                            registrations={registrations}
-                                            setRegistrations={setRegistrations}
-                                        />
+                        {Array.isArray(registrations) &&
+                            registrations.map((registration, index) => (
+                                <tr key={index}>
+                                    <td>{registration.marathonTitle}</td>
+                                    <td>{registration.marathonStartDate}</td>
+                                    <td>{registration.firstName}</td>
+                                    <td>{registration.lastName}</td>
+                                    <td>{registration.contactNumber}</td>
+                                    <td>{registration.additionalInfo}</td>
+                                    <td>
+                                        <div className="flex gap-2">
+                                            <UpdateRegistration
+                                                registration={registration}
+                                                registrations={registrations}
+                                                setRegistrations={
+                                                    setRegistrations
+                                                }
+                                            />
 
-                                        <button
-                                            onClick={() =>
-                                                handleDeleteRegistration(
-                                                    registration._id
-                                                )
-                                            }
-                                            className="btn bg-primary text-white px-4 py-2 rounded-full"
-                                        >
-                                            Delete
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
+                                            <button
+                                                onClick={() =>
+                                                    handleDeleteRegistration(
+                                                        registration._id
+                                                    )
+                                                }
+                                                className="btn bg-primary text-white px-4 py-2 rounded-full"
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
                     </tbody>
                 </table>
             </div>

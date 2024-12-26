@@ -2,23 +2,31 @@ import { useState, useEffect } from "react";
 // import useAuth from "../../hooks/useAuth";
 import MarathonData from "./MarathonData";
 import { Helmet } from "react-helmet-async";
+import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyMarathonList = () => {
-    // const { user } = useAuth();
+    const { user } = useAuth();
 
     const [marathons, setMarathons] = useState([]);
     // console.log(marathons);
+    const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/marathons`)
-            .then((res) => res.json())
-            .then((data) => {
-                setMarathons(data);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
-    }, []);
+        // fetch(`http://localhost:5000/marathons`)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         setMarathons(data);
+        //     })
+        //     .catch((error) => {
+        //         console.error("Error:", error);
+        //     });
+
+        //* Using axios with custom hook
+        axiosSecure
+            .get(`/marathons?email=${user.email}`)
+            .then((res) => setMarathons(res.data));
+    }, [user.email, axiosSecure]);
 
     return (
         <div className="mx-auto p-4">
