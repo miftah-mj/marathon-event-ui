@@ -3,7 +3,7 @@ import { TbShoe } from "react-icons/tb";
 
 const About = () => {
     return (
-        <div className="max-w-screen-xl mx-auto flex gap-6 bg-white px-6 md:px-0 py-10">
+        <div className="max-w-screen-xl mx-auto flex gap-6 bg-white px-6 md:px-0 py-20">
             {/* image Section */}
             <div className="md:flex-1">
                 <img
@@ -15,10 +15,10 @@ const About = () => {
 
             {/* content Section */}
             <div className="w-full md:flex-1 space-y-4 text-textSecondary">
-                <h6 className="text-xl font-bold uppercase">
+                <h6 className="text-xl font-raleway font-bold uppercase">
                     About OnYourMark
                 </h6>
-                <h2 className="text-3xl text-textPrimary md:text-4xl font-bold mb-4 uppercase">
+                <h2 className="text-3xl font-raleway text-textPrimary md:text-4xl font-bold mb-4 uppercase">
                     where runners become{" "}
                     <span className="text-textAccent">champions</span>
                 </h2>
@@ -67,7 +67,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <button className="btn btn-warning mt-6 px-6 py-2 font-bold rounded-lg">
+                <button className="btn bg-textAccent mt-6 px-6 py-2 font-bold rounded-lg">
                     LEARN MORE
                 </button>
             </div>

@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import Slider from "../../components/Slider";
-import MarathonsSection from "./MarathonsSection";
 import UpcommingMarathons from "./UpcommingMarathons";
 import MarathonTips from "./MarathonTips";
 import About from "./About";
+import MarathonsEvents from "./MarathonEvents";
 
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
             </Helmet>
             <Slider />
             <About />
-            <MarathonsSection />
+            <MarathonsEvents />
             <UpcommingMarathons />
             <MarathonTips />
         </div>

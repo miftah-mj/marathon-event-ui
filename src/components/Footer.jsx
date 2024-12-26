@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-center bg-background text-primary p-10">
+            <footer className="footer footer-center bg-background font-raleway text-primary p-10">
                 <div className="flex flex-col items-center space-y-2">
                     <img src={logo} alt="Logo" className="w-16 h-16" />
                     <h1 className="text-2xl font-bold">OnYourMark</h1>

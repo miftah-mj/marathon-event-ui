@@ -36,7 +36,7 @@ const Signin = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
+        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center py-10">
             <Helmet>
                 <title>OnYourMark | Sign In</title>
             </Helmet>
@@ -84,8 +84,8 @@ const Signin = () => {
 
                         <label className="label">
                             <Link
-                                to="/auth/forgot-password"
-                                className="label-text-alt link link-hover text-orange-500"
+                                to="/auth/register"
+                                className="label-text-alt link link-hover text-sm text-orange-500"
                             >
                                 Forgot password?
                             </Link>
@@ -93,7 +93,7 @@ const Signin = () => {
                     </div>
 
                     <div className="form-control mt-6 space-y-2">
-                        <button className="btn bg-primary text-white px-6 py-2 rounded-full">
+                        <button className="btn btn-outline text-primary px-6 py-2 rounded-full">
                             Sign In
                         </button>
 
@@ -105,7 +105,7 @@ const Signin = () => {
                     Already Have An Account?{" "}
                     <Link
                         to="/auth/register"
-                        className="text-accent font-semibold hover:underline"
+                        className="text-secondary font-semibold hover:underline"
                     >
                         Register
                     </Link>

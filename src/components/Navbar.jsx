@@ -55,7 +55,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-gray-50">
+        <div className="navbar font-raleway bg-gray-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -120,7 +120,7 @@ const Navbar = () => {
 
                             <button
                                 onClick={handleSignout}
-                                className="btn btn-outline text-accent"
+                                className="btn btn-outline text-primary bg-white/30"
                             >
                                 Log Out
                             </button>
@@ -129,14 +129,14 @@ const Navbar = () => {
                         <div className=" flex items-center gap-4">
                             <Link
                                 to="/auth/register"
-                                className="btn btn-outline text-accent"
+                                className="btn btn-outline text-primary bg-white/30"
                             >
                                 Register
                             </Link>
 
                             <Link
                                 to="/auth/signin"
-                                className="btn btn-outline text-accent"
+                                className="btn btn-outline text-primary bg-white/30"
                             >
                                 Sign In
                             </Link>

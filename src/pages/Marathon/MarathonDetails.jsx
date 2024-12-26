@@ -61,7 +61,7 @@ const MarathonDetails = () => {
                 <title>OnYourMark | {marathonTitle}</title>
             </Helmet>
 
-            <h1 className="text-3xl font-bold mb-4">{marathonTitle}</h1>
+            <h1 className="text-3xl font-raleway font-semibold mb-4">{marathonTitle}</h1>
             <img
                 src={marathonImage}
                 alt="Marathon"

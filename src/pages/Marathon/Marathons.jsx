@@ -26,16 +26,20 @@ const Marathons = () => {
             <Helmet>
                 <title>OnYourMark | Marathons</title>
             </Helmet>
-            <h2 className="text-3xl font-semibold text-center">
-                All Marathon Events
-            </h2>
 
-            <div className="flex justify-end mb-4">
-                <label className="mr-2">Sort by:</label>
+            <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">
+                Marathons
+            </h6>
+            <h3 className="text-3xl font-raleway font-semibold text-center text-textPrimary mb-10 uppercase">
+                All the marathons happening around the world
+            </h3>
+
+            <div className="flex justify-end items-center gap-2">
+                <label className="text-lg text-secondary font-semibold uppercase">sort by:</label>
                 <select
                     value={sortOrder}
                     onChange={handleSortChange}
-                    className="border rounded px-2 py-1"
+                    className="border border-gray-500 rounded px-2 py-1 font-semibold uppercase"
                 >
                     <option value="desc">Newest to Oldest</option>
                     <option value="asc">Oldest to Newest</option>

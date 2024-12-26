@@ -84,7 +84,7 @@ const AddMarathon = () => {
                 <title>OnYourMark | Add Marathon</title>
             </Helmet>
 
-            <h1 className="text-3xl font-bold text-center mb-4">
+            <h1 className="text-3xl font-raleway font-semibold text-center mb-4">
                 Add Marathon
             </h1>
             <form onSubmit={handleAddMarathon}>

@@ -56,7 +56,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center">
+        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center py-10">
             <Helmet>
                 <title>OnYourMark | Register</title>
             </Helmet>
@@ -144,7 +144,7 @@ const Register = () => {
                     </div>
 
                     <div className="form-control mt-6 space-y-2">
-                        <button className="btn bg-primary text-white px-6 py-2 rounded-full">
+                        <button className="btn btn-outline text-primary px-6 py-2 rounded-full">
                             Register
                         </button>
                         {/* sign up with google */}
@@ -155,7 +155,7 @@ const Register = () => {
                     Already Have An Account?{" "}
                     <Link
                         to="/auth/signin"
-                        className="text-accent font-semibold hover:underline"
+                        className="text-secondary font-semibold hover:underline"
                     >
                         Sign in
                     </Link>

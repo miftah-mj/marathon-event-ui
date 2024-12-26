@@ -26,7 +26,7 @@ const MyMarathonList = () => {
                 <title>OnYourMark | My Marathon List</title>
             </Helmet>
 
-            <h2 className="text-3xl font-bold text-center mb-4">
+            <h2 className="text-3xl font-raleway font-semibold text-center mb-4">
                 My Marathon List
             </h2>
             <div className="overflow-x-auto">

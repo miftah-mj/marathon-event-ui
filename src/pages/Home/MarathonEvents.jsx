@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MarathonCard from "../Marathon/MarathonCard";
 
-const MarathonsSection = () => {
+const MarathonsEvents = () => {
     const [marathons, setMarathons] = useState([]);
 
     useEffect(() => {
@@ -15,9 +15,12 @@ const MarathonsSection = () => {
 
     return (
         <div className="max-w-screen-xl mx-auto py-10">
-            <h2 className="text-3xl font-semibold text-center">
+            <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">
                 Marathon Events
-            </h2>
+            </h6>
+            <h3 className="text-3xl font-raleway font-semibold text-center text-textPrimary mb-10 uppercase">
+                Some of the marathons happening around the world
+            </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
                 {marathons.map((marathon) => (
@@ -28,4 +31,4 @@ const MarathonsSection = () => {
     );
 };
 
-export default MarathonsSection;
+export default MarathonsEvents;

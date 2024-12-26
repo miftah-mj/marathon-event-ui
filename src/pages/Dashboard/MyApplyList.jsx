@@ -75,7 +75,7 @@ const MyApplyList = () => {
                 <title>OnYourMark | My Apply List</title>
             </Helmet>
 
-            <h1 className="text-3xl font-bold text-center mb-4">
+            <h1 className="text-3xl font-raleway font-semibold text-center mb-4">
                 My Apply List
             </h1>
 
