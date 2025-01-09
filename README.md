@@ -4,15 +4,47 @@ Welcome to OnYourMark, your ultimate destination for marathon events. Our missio
 
 ## Live Site
 
-Check out our live site: [OnYourMark](https://marathon-event.web.app/)
+Check out the live site: [OnYourMark](https://marathon-event.web.app/)
 
-## Features
+## Table of Contents
 
--   **Upcoming Marathons**: Stay updated with the latest marathon events happening around the world.
+-   [About](#about)
+-   [Key Highlights](#key-highlights)
+-   [Getting Started](#getting-started)
+-   [Technologies Used](#technologies-used)
+
+## About
+
+OnYourMark is a comprehensive platform designed to bring marathon enthusiasts together. Whether you are looking to participate in a marathon, get tips on how to prepare, or manage your marathon registrations, OnYourMark has got you covered. Our platform is built with the runner in mind, offering a seamless and user-friendly experience.
+
+## Key Highlights
+
+-   **Upcoming Marathons**: Stay updated with the latest marathon events around the world.
 -   **Registration Management**: Easily register for marathons and manage your registrations.
 -   **Marathon Tips**: Get valuable tips and advice to help you prepare for your next marathon.
 -   **User Dashboard**: Access your personalized dashboard to view and manage your marathon applications.
--   **Responsive Design**: Enjoy a seamless experience on any device, whether it's a desktop, tablet, or mobile.
+-   **Responsive Design**: Enjoy a seamless experience on any device.
+
+## Getting Started
+
+To get started with the project, follow these steps:
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/marathon-event-ui.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd marathon-event-ui
+    ```
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
+4. Start the development server:
+    ```sh
+    npm start
+    ```
 
 ## Technologies Used
 
