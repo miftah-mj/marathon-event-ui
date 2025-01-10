@@ -25,21 +25,15 @@ const AppRoutes = createBrowserRouter([
             },
             {
                 path: "marathons",
-                element: (
-                    <PrivateRoute>
-                        <Marathons />
-                    </PrivateRoute>
-                ),
+                element: <Marathons />,
             },
             {
                 path: "marathons/:id",
-                element: (
-                    <PrivateRoute>
-                        <MarathonDetails />
-                    </PrivateRoute>
-                ),
+                element: <MarathonDetails />,
                 loader: ({ params }) =>
-                    fetch(`https://marathon-event-api.vercel.app/marathons/${params.id}`),
+                    fetch(
+                        `https://marathon-event-api.vercel.app/marathons/${params.id}`
+                    ),
             },
             {
                 path: "marathon-register/:id",
@@ -49,7 +43,9 @@ const AppRoutes = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                    fetch(`https://marathon-event-api.vercel.app/marathons/${params.id}`),
+                    fetch(
+                        `https://marathon-event-api.vercel.app/marathons/${params.id}`
+                    ),
             },
             {
                 path: "dashboard",

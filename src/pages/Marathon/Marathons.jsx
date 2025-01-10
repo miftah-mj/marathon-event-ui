@@ -7,7 +7,9 @@ const Marathons = () => {
     const [sortOrder, setSortOrder] = useState("desc");
 
     useEffect(() => {
-        fetch(`https://marathon-event-api.vercel.app/marathons?sort=${sortOrder}`)
+        fetch(
+            `https://marathon-event-api.vercel.app/marathons?sort=${sortOrder}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setMarathons(data);
@@ -35,7 +37,9 @@ const Marathons = () => {
             </h3>
 
             <div className="flex justify-end items-center gap-2">
-                <label className="text-lg text-secondary font-semibold uppercase">sort by:</label>
+                <label className="text-lg text-secondary font-semibold uppercase">
+                    sort by:
+                </label>
                 <select
                     value={sortOrder}
                     onChange={handleSortChange}

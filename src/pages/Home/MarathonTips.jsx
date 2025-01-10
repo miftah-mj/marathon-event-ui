@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaRunning } from "react-icons/fa";
 
 const MarathonTips = () => {
     const [tips, setTips] = useState([]);
@@ -26,7 +27,8 @@ const MarathonTips = () => {
                         key={tip._id}
                         className="card bg-white shadow-md rounded-lg p-4"
                     >
-                        <h3 className="text-xl font-raleway font-semibold text-secondary mb-2">
+                        <FaRunning className="text-primary text-3xl mb-2" />
+                        <h3 className="text-xl font-raleway font-semibold text-primary mb-2">
                             {tip.title}
                         </h3>
                         <p className="text-gray-700">{tip.description}</p>
