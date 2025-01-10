@@ -66,7 +66,7 @@ const MarathonRegister = () => {
     };
 
     return (
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-4 items-center">
+        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-4 items-center py-12">
             {/* Register for marathon */}
             <div className="flex-1 max-w-3xl p-4">
                 <h1 className="text-3xl font-bold mb-4">
@@ -158,7 +158,7 @@ const MarathonRegister = () => {
                     </div>
                     <button
                         type="submit"
-                        className="btn bg-primary text-white px-6 py-2 rounded-full"
+                        className="btn bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary"
                     >
                         Register
                     </button>

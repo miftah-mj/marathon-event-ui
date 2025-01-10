@@ -15,7 +15,7 @@ const UpcommingMarathons = () => {
 
     return (
         <div className="bg-gray-50">
-            <div className="max-w-screen-xl mx-auto py-10">
+            <div className="max-w-screen-xl mx-auto py-12">
                 <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">
                     upcomming marathons
                 </h6>
@@ -23,7 +23,7 @@ const UpcommingMarathons = () => {
                     Here are some of the marathons coming up in the near future
                 </h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-12">
                     {marathons.map((marathon) => (
                         <MarathonCard key={marathon._id} marathon={marathon} />
                     ))}

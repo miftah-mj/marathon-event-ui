@@ -47,7 +47,7 @@ const Signin = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center py-10">
+        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center py-12">
             <Helmet>
                 <title>OnYourMark | Sign In</title>
             </Helmet>

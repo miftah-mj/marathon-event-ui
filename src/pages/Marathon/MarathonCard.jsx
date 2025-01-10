@@ -25,7 +25,7 @@ const MarathonCard = ({ marathon }) => {
                 <div className="font-bold text-xl mb-2">{marathonTitle}</div>
                 <p className="text-gray-700 text-base">Location: {location}</p>
                 <p className="text-gray-700 text-base">
-                    Registration Dates: {startRegistrationDate} -{" "}
+                    Registration Dates: {startRegistrationDate} to{" "}
                     {endRegistrationDate}
                 </p>
                 <p className="text-gray-700 text-base">
@@ -35,7 +35,7 @@ const MarathonCard = ({ marathon }) => {
             <div className="px-6 pt-4 pb-2">
                 <Link
                     to={`/marathons/${_id}`}
-                    className="btn bg-primary text-white font-bold px-4 rounded"
+                    className="btn bg-primary text-white font-bold px-4 rounded hover:bg-secondary"
                 >
                     See Details
                 </Link>

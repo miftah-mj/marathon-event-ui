@@ -90,13 +90,13 @@ const MarathonData = ({ marathon, marathons, setMarathons }) => {
                 <div className="flex gap-4">
                     <button
                         onClick={() => handleUpdateMarathon(_id)}
-                        className="btn bg-primary text-white px-6 py-2 rounded-full"
+                        className="btn bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary"
                     >
                         Edit
                     </button>
                     <button
                         onClick={() => handleDeleteMarathon(_id)}
-                        className="btn bg-primary text-white px-6 py-2 rounded-full"
+                        className="btn bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary"
                     >
                         Delete
                     </button>
