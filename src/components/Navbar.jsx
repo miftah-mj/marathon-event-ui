@@ -39,6 +39,27 @@ const Navbar = () => {
             >
                 Marathons
             </NavLink>
+            <NavLink
+                to="/gallery"
+                className={({ isActive }) =>
+                    `tab text-base ${
+                        isActive ? "text-secondary" : "hover:text-secondary"
+                    }`
+                }
+            >
+                Gallery
+            </NavLink>
+            <NavLink
+                to="/results"
+                className={({ isActive }) =>
+                    `tab text-base ${
+                        isActive ? "text-secondary" : "hover:text-secondary"
+                    }`
+                }
+            >
+                Results
+            </NavLink>
+
 
             {user && user?.email ? (
                 <NavLink
@@ -53,14 +74,6 @@ const Navbar = () => {
                 </NavLink>
             ) : null}
 
-            <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                className="tab text-base cursor-pointer hover:text-secondary"
-            >
-                About
-            </Link>
             <Link
                 to="contact"
                 smooth={true}

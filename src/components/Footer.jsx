@@ -5,11 +5,11 @@ const Footer = () => {
     return (
         <footer
             id="contact"
-            className="footer-center bg-background font-raleway pt-12 pb-4"
+            className="footer-center bg-background pt-12 pb-4"
         >
             <div className="flex flex-col items-center space-y-2">
                 <img src={logo} alt="Logo" className="w-16 h-16" />
-                <h1 className="text-2xl font-bold">RunTrack</h1>
+                <h1 className="text-2xl font-raleway font-bold">RunTrack</h1>
                 <p className="text-center">
                     This is a brief description of the website. It provides
                     information about the purpose and content of the site.

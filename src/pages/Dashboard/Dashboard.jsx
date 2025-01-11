@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
     return (
-        <div className="max-w-screen-xl mx-auto py-12">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-0  py-12">
             <Helmet>
                 <title>Dashboard | RunTrack</title>
             </Helmet>

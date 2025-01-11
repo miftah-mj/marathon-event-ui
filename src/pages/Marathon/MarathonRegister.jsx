@@ -66,7 +66,7 @@ const MarathonRegister = () => {
     };
 
     return (
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-4 items-center py-12">
+        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-4 items-center px-6 lg:px-0  py-12">
             {/* Register for marathon */}
             <div className="flex-1 max-w-3xl p-4">
                 <h1 className="text-3xl font-bold mb-4">

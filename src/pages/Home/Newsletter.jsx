@@ -2,7 +2,7 @@ import { FaCheck } from "react-icons/fa";
 
 const Newsletter = () => {
     return (
-        <div className="flex flex-col items-center justify-center bg-backgroundDark py-12">
+        <div className="flex flex-col items-center justify-center bg-backgroundDark px-6 lg:px-0 px-6  py-12">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 Subscribe to the RunTrack newsletter
             </h2>

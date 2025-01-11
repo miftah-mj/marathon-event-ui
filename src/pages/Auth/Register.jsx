@@ -56,7 +56,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center py-12">
+        <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center px-6 lg:px-0  py-12">
             <Helmet>
                 <title>Register | RunTrack</title>
             </Helmet>

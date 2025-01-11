@@ -13,6 +13,8 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import MarathonDetails from "../pages/Marathon/MarathonDetails";
 import MarathonRegister from "../pages/Marathon/MarathonRegister";
 import Marathons from "../pages/Marathon/Marathons";
+import Gallery from "../pages/Gallery";
+import Results from "../pages/Results";
 
 const AppRoutes = createBrowserRouter([
     {
@@ -46,6 +48,14 @@ const AppRoutes = createBrowserRouter([
                     fetch(
                         `https://marathon-event-api.vercel.app/marathons/${params.id}`
                     ),
+            },
+            {
+                path: "gallery",
+                element: <Gallery />,
+            },
+            {
+                path: "results",
+                element: <Results />,
             },
             {
                 path: "dashboard",

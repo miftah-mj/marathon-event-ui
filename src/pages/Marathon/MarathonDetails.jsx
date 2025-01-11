@@ -56,7 +56,7 @@ const MarathonDetails = () => {
     const daysDuration = days * daySeconds;
 
     return (
-        <div className="max-w-screen-xl mx-auto p-4 space-y-2 py-12">
+        <div className="max-w-screen-xl mx-auto p-4 space-y-2 px-6 lg:px-0  py-12">
             <Helmet>
                 <title>RunTrack | {marathonTitle}</title>
             </Helmet>

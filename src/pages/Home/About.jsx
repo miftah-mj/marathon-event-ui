@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div
             id="about"
-            className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 bg-white px-6 lg:px-0 py-20"
+            className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 bg-white px-6 lg:px-0 py-24"
         >
             {/* image Section */}
             <div className="md:flex-1">

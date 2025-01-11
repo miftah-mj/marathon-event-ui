@@ -13,7 +13,7 @@ const MarathonTips = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto py-12">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-0 px-6  py-12">
             <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">
                 Marathon Tips
             </h6>
@@ -21,7 +21,7 @@ const MarathonTips = () => {
                 Here are some tips to help you prepare for the marathon.
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 lg:px-0  py-12">
                 {tips.map((tip) => (
                     <div
                         key={tip._id}

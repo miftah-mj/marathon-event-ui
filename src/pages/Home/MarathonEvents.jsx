@@ -14,7 +14,7 @@ const MarathonsEvents = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto py-12">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-0 px-6  py-12">
             <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">
                 Marathon Events
             </h6>
@@ -22,7 +22,7 @@ const MarathonsEvents = () => {
                 Some of the marathons happening around the world
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 lg:px-0  py-12">
                 {marathons.map((marathon) => (
                     <MarathonCard key={marathon._id} marathon={marathon} />
                 ))}
