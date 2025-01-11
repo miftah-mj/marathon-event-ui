@@ -5,7 +5,7 @@ const NotFoundPage = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <Helmet>
-                <title>OnYourMark | 404 Not Found</title>
+                <title>RunTrack | 404 Not Found</title>
             </Helmet>
 
             <h2 className="text-5xl font-bold">404 Not Found</h2>

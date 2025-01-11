@@ -58,7 +58,7 @@ const Register = () => {
     return (
         <div className="min-h-screen flex flex-col lg:flex-row-reverse justify-center items-center py-12">
             <Helmet>
-                <title>OnYourMark | Register</title>
+                <title>RunTrack | Register</title>
             </Helmet>
 
             <div className="card bg-white/60 w-full max-w-lg shrink-0 rounded-none p-10">

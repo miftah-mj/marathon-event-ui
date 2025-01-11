@@ -1,10 +1,10 @@
-# OnYourMark
+# RunTrack
 
-Welcome to OnYourMark, your ultimate destination for marathon events. Our mission is to provide runners with the best marathon experiences, whether you are a seasoned runner or a beginner.
+Welcome to RunTrack, your ultimate destination for marathon events. Our mission is to provide runners with the best marathon experiences, whether you are a seasoned runner or a beginner.
 
 ## Live Site
 
-Check out the live site: [OnYourMark](https://marathon-event.web.app/)
+Check out the live site: [RunTrack](https://marathon-event.web.app/)
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Check out the live site: [OnYourMark](https://marathon-event.web.app/)
 
 ## About
 
-OnYourMark is a comprehensive platform designed to bring marathon enthusiasts together. Whether you are looking to participate in a marathon, get tips on how to prepare, or manage your marathon registrations, OnYourMark has got you covered. Our platform is built with the runner in mind, offering a seamless and user-friendly experience.
+RunTrack is a comprehensive platform designed to bring marathon enthusiasts together. Whether you are looking to participate in a marathon, get tips on how to prepare, or manage your marathon registrations, RunTrack has got you covered. Our platform is built with the runner in mind, offering a seamless and user-friendly experience.
 
 ## Key Highlights
 

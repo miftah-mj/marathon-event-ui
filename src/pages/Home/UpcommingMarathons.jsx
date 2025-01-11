@@ -14,7 +14,7 @@ const UpcommingMarathons = () => {
     }, []);
 
     return (
-        <div className="bg-gray-50">
+        <div className="bg-backgroundDark">
             <div className="max-w-screen-xl mx-auto py-12">
                 <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">
                     upcomming marathons

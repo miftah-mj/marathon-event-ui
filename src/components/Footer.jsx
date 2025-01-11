@@ -3,10 +3,13 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
     return (
-        <footer className="footer-center bg-background font-raleway text-primary pt-12 pb-4">
+        <footer
+            id="contact"
+            className="footer-center bg-background font-raleway pt-12 pb-4"
+        >
             <div className="flex flex-col items-center space-y-2">
                 <img src={logo} alt="Logo" className="w-16 h-16" />
-                <h1 className="text-2xl font-bold">OnYourMark</h1>
+                <h1 className="text-2xl font-bold">RunTrack</h1>
                 <p className="text-center">
                     This is a brief description of the website. It provides
                     information about the purpose and content of the site.
@@ -24,8 +27,7 @@ const Footer = () => {
                 </Link>
             </nav>
             <p className="mt-4">
-                &copy; {new Date().getFullYear()} OnYourMark. All rights
-                reserved.
+                &copy; {new Date().getFullYear()} RunTrack. All rights reserved.
             </p>
         </footer>
     );

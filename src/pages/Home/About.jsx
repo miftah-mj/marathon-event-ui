@@ -3,7 +3,10 @@ import { TbShoe } from "react-icons/tb";
 
 const About = () => {
     return (
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 bg-white px-6 lg:px-0 py-20">
+        <div
+            id="about"
+            className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 bg-white px-6 lg:px-0 py-20"
+        >
             {/* image Section */}
             <div className="md:flex-1">
                 <img
@@ -16,14 +19,14 @@ const About = () => {
             {/* content Section */}
             <div className="w-full md:flex-1 space-y-4 text-textSecondary">
                 <h6 className="text-xl font-raleway font-bold uppercase">
-                    About OnYourMark
+                    About RunTrack
                 </h6>
                 <h2 className="text-3xl font-raleway text-textPrimary md:text-4xl font-bold mb-4 uppercase">
                     where runners become{" "}
-                    <span className="text-textAccent">champions</span>
+                    <span className="text-accent">champions</span>
                 </h2>
                 <p className="text-gray-700 mb-6">
-                    OnYourMark is the largest marathon event in the world. Every
+                    RunTrack is the largest marathon event in the world. Every
                     year, more than 50,000 runners from around the world gather
                     in New York City to participate in the event.
                 </p>
@@ -31,11 +34,11 @@ const About = () => {
                 <div className="flex flex-col space-y-4">
                     {/* Stats 1 */}
                     <div className="bg-gray-100 rounded-lg shadow-md grid grid-cols-4 items-center text-textGray p-6">
-                        <div className="text-textAccent flex items-center justify-center">
+                        <div className="text-accent flex items-center justify-center">
                             <FaPersonRunning size={70} />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <h5 className="text-textAccent text-4xl font-bold mb-2">
+                            <h5 className="text-accent text-4xl font-bold mb-2">
                                 273k+
                             </h5>
                             <p className="uppercase">Runners</p>
@@ -47,7 +50,7 @@ const About = () => {
                     </div>
                     {/* Stats 2 */}
                     <div className="bg-gray-100 rounded-lg shadow-md grid grid-cols-4 items-center text-textGray p-6">
-                        <div className="text-textAccent flex flex-col items-center justify-center">
+                        <div className="text-accent flex flex-col items-center justify-center">
                             <TbShoe className="absolute" size={70} />
                             <FaMagnifyingGlassLocation
                                 className="relative -bottom-8"
@@ -55,7 +58,7 @@ const About = () => {
                             />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <h5 className="text-textAccent text-4xl font-bold mb-2">
+                            <h5 className="text-accent text-4xl font-bold mb-2">
                                 30+
                             </h5>
                             <p className="uppercase">Countries</p>
@@ -67,7 +70,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <button className="btn bg-textAccent mt-6 px-6 py-2 font-bold rounded-lg">
+                <button className="btn bg-accent mt-6 px-6 py-2 font-bold rounded-lg">
                     LEARN MORE
                 </button>
             </div>

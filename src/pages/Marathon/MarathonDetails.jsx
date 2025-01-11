@@ -58,7 +58,7 @@ const MarathonDetails = () => {
     return (
         <div className="max-w-screen-xl mx-auto p-4 space-y-2 py-12">
             <Helmet>
-                <title>OnYourMark | {marathonTitle}</title>
+                <title>RunTrack | {marathonTitle}</title>
             </Helmet>
 
             <h1 className="text-3xl font-raleway font-semibold mb-4">

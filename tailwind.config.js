@@ -6,12 +6,14 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#47026c",
-                secondary: "#c86bfa",
-                background: "#f2ebfb",
-                textPrimary: "#1F2937",
+                primary: "#3da35d",
+                secondary: "#57cc99",
+                background: "#f0fff1",
+                backgroundDark: "#e8f1f2",
+                accent: "#80ed99",
+
+                textPrimary: "#263238",
                 textSecondary: "#adb5bd",
-                textAccent: "#eec7fc",
             },
             fontFamily: {
                 nunito: ["Nunito", "sans-serif"],
