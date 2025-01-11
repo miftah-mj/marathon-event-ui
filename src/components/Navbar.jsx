@@ -3,6 +3,7 @@ import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import logo from "../assets/logo.png";
 import { Link } from "react-scroll";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
@@ -59,7 +60,6 @@ const Navbar = () => {
             >
                 Results
             </NavLink>
-
 
             {user && user?.email ? (
                 <NavLink
@@ -139,6 +139,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <ThemeToggle />
+
                     <div>
                         {user && user?.email ? (
                             <div className=" flex items-center gap-4">
