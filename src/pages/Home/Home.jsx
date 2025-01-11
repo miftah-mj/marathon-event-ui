@@ -4,18 +4,20 @@ import UpcommingMarathons from "./UpcommingMarathons";
 import MarathonTips from "./MarathonTips";
 import About from "./About";
 import MarathonsEvents from "./MarathonEvents";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>RunTrack | Home</title>
+                <title>Home | RunTrack</title>
             </Helmet>
             <Slider />
             <About />
             <MarathonsEvents />
             <UpcommingMarathons />
             <MarathonTips />
+            <Newsletter />
         </div>
     );
 };
