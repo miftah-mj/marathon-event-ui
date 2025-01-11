@@ -49,6 +49,12 @@ const MyMarathonList = () => {
                     </thead>
                     <tbody>
                         <tr>
+                            {marathons.length === 0 && (
+                                <td colSpan="8" className="text-center">
+                                    No Marathons found
+                                </td>
+                            )}
+
                             {marathons.map((marathon) => (
                                 <MarathonData
                                     key={marathon._id}

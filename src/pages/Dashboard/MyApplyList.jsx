@@ -34,7 +34,7 @@ const MyApplyList = () => {
 
         // * Using axios with custom hook
         axiosSecure
-            .get(`/registrations?email=${user.email}?${query.toString()}`)
+            .get(`/registrations?email=${user.email}&${query.toString()}`)
             .then((res) => setRegistrations(res.data));
     };
 
@@ -117,7 +117,7 @@ const MyApplyList = () => {
     // };
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="mx-auto p-4">
             <Helmet>
                 <title>My Apply List | RunTrack</title>
             </Helmet>
@@ -146,51 +146,23 @@ const MyApplyList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {Array.isArray(registrations) &&
-                            registrations.map((registration) => (
-                                <tr key={registration._id}>
-                                    <td>{registration.marathonTitle}</td>
-                                    <td>{registration.marathonStartDate}</td>
-                                    <td>{registration.firstName}</td>
-                                    <td>{registration.lastName}</td>
-                                    <td>{registration.contactNumber}</td>
-                                    <td>{registration.additionalInfo}</td>
-                                    <td>
-                                        <div className="flex gap-2">
-                                            <button
-                                                onClick={() =>
-                                                    handleUpdateRegistration(
-                                                        registration
-                                                    )
-                                                }
-                                                className="btn bg-primary text-white px-4 py-2 rounded-full"
-                                            >
-                                                Update
-                                            </button>
-                                            <button
-                                                onClick={() =>
-                                                    handleDeleteRegistration(
-                                                        registration._id
-                                                    )
-                                                }
-                                                className="btn bg-primary text-white px-4 py-2 rounded-full"
-                                            >
-                                                Delete
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))} */}
+                        <tr>
+                            {registrations.length === 0 && (
+                                <td colSpan="8" className="text-center">
+                                    No Registrations found
+                                </td>
+                            )}
 
-                        {Array.isArray(registrations) &&
-                            registrations.map((registration) => (
-                                <ApplyData
-                                    key={registration._id}
-                                    registration={registration}
-                                    registrations={registrations}
-                                    setRegistrations={setRegistrations}
-                                />
-                            ))}
+                            {Array.isArray(registrations) &&
+                                registrations.map((registration) => (
+                                    <ApplyData
+                                        key={registration._id}
+                                        registration={registration}
+                                        registrations={registrations}
+                                        setRegistrations={setRegistrations}
+                                    />
+                                ))}
+                        </tr>
                     </tbody>
                 </table>
             </div>
