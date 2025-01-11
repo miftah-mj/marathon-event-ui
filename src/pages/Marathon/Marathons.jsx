@@ -26,7 +26,7 @@ const Marathons = () => {
     return (
         <div className="max-w-screen-xl mx-auto py-12">
             <Helmet>
-                <title>RunTrack | Marathons</title>
+                <title>Marathons | RunTrack</title>
             </Helmet>
 
             <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">

@@ -5,7 +5,7 @@ const Dashboard = () => {
     return (
         <div className="max-w-screen-xl mx-auto py-12">
             <Helmet>
-                <title>RunTrack | Dashboard</title>
+                <title>Dashboard | RunTrack</title>
             </Helmet>
 
             <div className="lg:grid lg:grid-cols-12 gap-4 lg:gap-10">

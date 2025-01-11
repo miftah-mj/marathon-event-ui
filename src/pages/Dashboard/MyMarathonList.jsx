@@ -31,7 +31,7 @@ const MyMarathonList = () => {
     return (
         <div className="mx-auto p-4">
             <Helmet>
-                <title>RunTrack | My Marathon List</title>
+                <title>My Marathon List | RunTrack</title>
             </Helmet>
 
             <h2 className="text-3xl font-raleway font-semibold text-center mb-4">

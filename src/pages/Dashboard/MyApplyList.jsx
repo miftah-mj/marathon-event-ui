@@ -119,7 +119,7 @@ const MyApplyList = () => {
     return (
         <div className="container mx-auto p-4">
             <Helmet>
-                <title>My Apply List</title>
+                <title>My Apply List | RunTrack</title>
             </Helmet>
             <h1 className="text-3xl font-bold mb-4">My Apply List</h1>
             <div className="mb-4">

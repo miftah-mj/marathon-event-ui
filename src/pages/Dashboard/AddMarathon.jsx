@@ -81,7 +81,7 @@ const AddMarathon = () => {
     return (
         <div className="max-w-3xl mx-auto p-4">
             <Helmet>
-                <title>RunTrack | Add Marathon</title>
+                <title>Add Marathon | RunTrack</title>
             </Helmet>
 
             <h1 className="text-3xl font-raleway font-semibold text-center mb-4">
