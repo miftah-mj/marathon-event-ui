@@ -30,6 +30,8 @@ export default {
                     secondary: "#57cc99",
                     background: "#fff",
                     accent: "#80ed99",
+                    textPrimary: "#263238",
+                    textSecondary: "#adb5bd",
                     neutral: "#f5f5f5",
                     "base-100": "#ffffff",
                 },
