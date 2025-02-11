@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "marathon-event"
+    "default": "runtrack-marathon-event"
   }
 }

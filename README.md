@@ -4,7 +4,7 @@ Welcome to RunTrack, your ultimate destination for marathon events. Our mission 
 
 ## Live Site
 
-Check out the live site: [RunTrack](https://marathon-event.web.app/)
+Check out the live site: [RunTrack](https://runtrack-marathon-event.web.app/)
 
 ## Table of Contents
 
