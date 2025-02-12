@@ -13,7 +13,7 @@ const MarathonTips = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-0 px-6  py-12">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-0 py-12">
             <h6 className="text-xl font-raleway font-bold text-center text-textSecondary mb-4 uppercase">
                 Marathon Tips
             </h6>
@@ -25,7 +25,7 @@ const MarathonTips = () => {
                 {tips.map((tip) => (
                     <div
                         key={tip._id}
-                        className="card bg-white shadow-md rounded-lg p-4"
+                        className="card shadow-md rounded-lg p-4"
                     >
                         <FaRunning className="text-primary text-3xl mb-2" />
                         <h3 className="text-xl font-raleway font-semibold text-primary mb-2">

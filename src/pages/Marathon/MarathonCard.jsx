@@ -13,7 +13,7 @@ const MarathonCard = ({ marathon }) => {
     } = marathon;
 
     return (
-        <div className="rounded overflow-hidden shadow-lg border p-4 bg-white">
+        <div className="rounded overflow-hidden shadow-lg border p-4">
             <div>
                 <img
                     className="w-full h-56 object-cover"

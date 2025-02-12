@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div
             id="about"
-            className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 bg-white px-6 lg:px-0 py-24"
+            className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 px-6 lg:px-0 py-24"
         >
             {/* image Section */}
             <div className="md:flex-1">
@@ -25,7 +25,7 @@ const About = () => {
                     where runners become{" "}
                     <span className="text-accent">champions</span>
                 </h2>
-                <p className="text-gray-700 mb-6">
+                <p className="text-textSecondary mb-6">
                     RunTrack is the largest marathon event in the world. Every
                     year, more than 50,000 runners from around the world gather
                     in New York City to participate in the event.
@@ -41,9 +41,9 @@ const About = () => {
                             <h5 className="text-accent text-4xl font-bold mb-2">
                                 273k+
                             </h5>
-                            <p className="uppercase">Runners</p>
+                            <p className="uppercase text-black">Runners</p>
                         </div>
-                        <p className="col-span-2 text-sm text-center flex-1">
+                        <p className="col-span-2 text-sm text-center flex-1 text-black">
                             Cumulative total of runners throughout the
                             event&apos;s history.
                         </p>
@@ -61,17 +61,17 @@ const About = () => {
                             <h5 className="text-accent text-4xl font-bold mb-2">
                                 30+
                             </h5>
-                            <p className="uppercase">Countries</p>
+                            <p className="uppercase text-black">Countries</p>
                         </div>
-                        <p className="col-span-2 text-sm text-center flex-1">
+                        <p className="col-span-2 text-sm text-center flex-1 text-black">
                             Runners from over 30 countries participate in the
                             event.
                         </p>
                     </div>
                 </div>
 
-                <button className="btn bg-accent mt-6 px-6 py-2 font-bold rounded-lg">
-                    LEARN MORE
+                <button className="btn bg-accent text-black mt-6 px-6 py-2 font-bold rounded-lg uppercase">
+                    Learn more
                 </button>
             </div>
         </div>

@@ -138,7 +138,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end space-x-4">
                     <ThemeToggle />
 
                     <div>

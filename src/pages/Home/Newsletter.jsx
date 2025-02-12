@@ -2,10 +2,10 @@ import { FaCheck } from "react-icons/fa";
 
 const Newsletter = () => {
     return (
-        <div className="flex flex-col items-center justify-center bg-backgroundDark px-6 lg:px-0 px-6  py-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+        <div className="flex flex-col items-center justify-center bg-backgroundDark px-6 lg:px-0 py-12">
+            <h6 className="text-2xl font-raleway font-bold mb-4">
                 Subscribe to the RunTrack newsletter
-            </h2>
+            </h6>
             <ul className="flex justify-center gap-4 text-gray-600 mb-6">
                 <li className="flex items-center gap-2">
                     <FaCheck className="text-secondary" /> Deals and discounts
