@@ -21,14 +21,14 @@ const MarathonCard = ({ marathon }) => {
                     alt="event-image"
                 />
             </div>
-            <div className="px-6 py-4">
+            <div className="px-6 py-4 text-textPrimary">
                 <div className="font-bold text-xl mb-2">{marathonTitle}</div>
-                <p className="text-gray-700 text-base">Location: {location}</p>
-                <p className="text-gray-700 text-base">
+                <p className="text-base">Location: {location}</p>
+                <p className="text-base text-textPrimary">
                     Registration Dates: {startRegistrationDate} to{" "}
                     {endRegistrationDate}
                 </p>
-                <p className="text-gray-700 text-base">
+                <p className="text-base">
                     Marathon Starts: {marathonStartDate}
                 </p>
             </div>

@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import logo from "../assets/logo.png";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -169,14 +169,14 @@ const Navbar = () => {
                             <div className=" flex items-center gap-4">
                                 <NavLink
                                     to="/auth/register"
-                                    className="btn btn-outline text-secondary bg-white/30"
+                                    className="btn btn-outline text-secondary bg-white/30 hover:bg-secondary"
                                 >
                                     Register
                                 </NavLink>
 
                                 <NavLink
                                     to="/auth/signin"
-                                    className="btn btn-outline text-secondary bg-white/30"
+                                    className="btn btn-outline text-secondary bg-white/30 hover:bg-secondary"
                                 >
                                     Sign In
                                 </NavLink>
