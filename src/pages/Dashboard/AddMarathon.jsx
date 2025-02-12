@@ -70,7 +70,7 @@ const AddMarathon = () => {
             .then((data) => {
                 if (data.insertedId) {
                     toast.success("Marathon added successfully!");
-                    navigate("/dashboard");
+                    navigate("/dashboard/my-marathons");
                 }
             })
             .catch((error) => {

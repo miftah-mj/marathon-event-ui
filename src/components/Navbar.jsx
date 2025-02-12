@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import logo from "../assets/logo.png";
@@ -7,11 +7,13 @@ import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
+    const navigate = useNavigate();
 
     const handleSignout = () => {
         signOutUser()
             .then(() => {
                 toast.success("Signed out successfully");
+                navigate("/");
             })
             .catch((error) => {
                 toast.error(error.message);
@@ -74,19 +76,19 @@ const Navbar = () => {
                 </NavLink>
             ) : null}
 
-            <Link
+            {/* <Link
                 to="contact"
                 smooth={true}
                 duration={500}
                 className="tab text-base cursor-pointer hover:text-secondary"
             >
                 Contact
-            </Link>
+            </Link> */}
         </>
     );
 
     return (
-        <nav className="bg-background backdrop-blur-md bg-opacity-60 sticky top-0 z-50">
+        <nav className="bg-background sticky top-0 backdrop-blur-md bg-opacity-40 z-10">
             <div className="navbar max-w-screen-xl mx-auto py-2 px-0">
                 <div className="navbar-start">
                     <div className="dropdown">
