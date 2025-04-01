@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import logo from "../assets/logo.png";
 // import { Link } from "react-scroll";
 import ThemeToggle from "./ThemeToggle";
+import { PiPersonSimpleRunFill } from "react-icons/pi";
 
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
@@ -128,10 +129,8 @@ const Navbar = () => {
                             alt="Logo"
                             className="w-12 h-12 lg:w-16 lg:h-16"
                         />
-                        <h2>
-                            <span className="font-raleway text-secondary">
-                                RunTrack
-                            </span>
+                        <h2 className="font-raleway text-secondary uppercase">
+                            Run<span className=" text-primary">Track</span>
                         </h2>
                     </Link>
                 </div>
@@ -162,7 +161,7 @@ const Navbar = () => {
 
                                 <button
                                     onClick={handleSignout}
-                                    className="btn btn-outline text-secondary bg-white/30"
+                                    className="btn btn-outline text-secondary hover:bg-secondary"
                                 >
                                     Log Out
                                 </button>
@@ -171,14 +170,14 @@ const Navbar = () => {
                             <div className=" flex items-center gap-4">
                                 <NavLink
                                     to="/auth/register"
-                                    className="btn btn-outline text-secondary bg-white/30 hover:bg-secondary"
+                                    className="btn btn-outline text-secondary hover:bg-secondary"
                                 >
                                     Register
                                 </NavLink>
 
                                 <NavLink
                                     to="/auth/signin"
-                                    className="btn btn-outline text-secondary bg-white/30 hover:bg-secondary"
+                                    className="btn btn-outline text-secondary hover:bg-secondary"
                                 >
                                     Sign In
                                 </NavLink>

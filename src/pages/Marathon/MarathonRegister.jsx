@@ -74,7 +74,7 @@ const MarathonRegister = () => {
                 </h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
-                        <label className="block text-gray-700">Email</label>
+                        <label className="block text-textSecondary">Email</label>
                         <input
                             type="email"
                             name="email"
@@ -85,7 +85,7 @@ const MarathonRegister = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">
+                        <label className="block text-textSecondary">
                             Marathon Title
                         </label>
                         <input
@@ -97,7 +97,7 @@ const MarathonRegister = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">
+                        <label className="block text-textSecondary">
                             Marathon Start Date
                         </label>
                         <input
@@ -109,7 +109,7 @@ const MarathonRegister = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">
+                        <label className="block text-textSecondary">
                             First Name
                         </label>
                         <input
@@ -122,7 +122,7 @@ const MarathonRegister = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">Last Name</label>
+                        <label className="block text-textSecondary">Last Name</label>
                         <input
                             type="text"
                             name="lastName"
@@ -133,7 +133,7 @@ const MarathonRegister = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">
+                        <label className="block text-textSecondary">
                             Contact Number
                         </label>
                         <input
@@ -146,7 +146,7 @@ const MarathonRegister = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">
+                        <label className="block text-textSecondary">
                             Additional Info
                         </label>
                         <textarea

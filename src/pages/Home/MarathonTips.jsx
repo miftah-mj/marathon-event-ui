@@ -31,7 +31,7 @@ const MarathonTips = () => {
                         <h3 className="text-xl font-raleway font-semibold text-primary mb-2">
                             {tip.title}
                         </h3>
-                        <p className="text-gray-700">{tip.description}</p>
+                        <p className="text-textSecondary">{tip.description}</p>
                     </div>
                 ))}
             </div>

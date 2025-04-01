@@ -56,11 +56,11 @@ const Gallery = () => {
                                 ></iframe>
                             </div>
                         )}
-                        <div className="card-body bg-white p-4">
+                        <div className="card-body p-4">
                             <h2 className="card-title text-xl font-semibold">
                                 {item.title}
                             </h2>
-                            <p className="text-gray-600">{item.description}</p>
+                            <p className="text-textSecondary">{item.description}</p>
                         </div>
                     </div>
                 ))}

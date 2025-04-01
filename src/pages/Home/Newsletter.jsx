@@ -6,7 +6,7 @@ const Newsletter = () => {
             <h6 className="text-2xl font-raleway font-bold mb-4">
                 Subscribe to the RunTrack newsletter
             </h6>
-            <ul className="flex justify-center gap-4 text-gray-600 mb-6">
+            <ul className="flex justify-center gap-4 text-textSecondary mb-6">
                 <li className="flex items-center gap-2">
                     <FaCheck className="text-secondary" /> Deals and discounts
                 </li>
@@ -39,7 +39,7 @@ const Newsletter = () => {
                         className="mt-1"
                         required
                     />
-                    <label htmlFor="terms" className="text-sm text-gray-600">
+                    <label htmlFor="terms" className="text-sm text-textSecondary">
                         I have read and accept RunTrack{" "}
                         <a href="#" className="text-secondary hover:underline">
                             Terms of Service

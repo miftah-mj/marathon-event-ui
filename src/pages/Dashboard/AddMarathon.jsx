@@ -89,7 +89,7 @@ const AddMarathon = () => {
             </h1>
             <form onSubmit={handleAddMarathon}>
                 <div className="mb-4">
-                    <label className="block text-gray-700">
+                    <label className="block text-textSecondary">
                         Marathon Title
                     </label>
                     <input
@@ -103,7 +103,7 @@ const AddMarathon = () => {
                 </div>
                 <div className="flex gap-4">
                     <div className="mb-4">
-                        <label className="block text-gray-700">
+                        <label className="block text-textSecondary">
                             Start Registration Date
                         </label>
                         <DatePicker
@@ -116,7 +116,7 @@ const AddMarathon = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">
+                        <label className="block text-textSecondary">
                             End Registration Date
                         </label>
                         <DatePicker
@@ -130,7 +130,7 @@ const AddMarathon = () => {
                     </div>
                 </div>
                 <div className="mb-4">
-                    <label className="block text-gray-700">
+                    <label className="block text-textSecondary">
                         Marathon Start Date
                     </label>
                     <DatePicker
@@ -143,7 +143,7 @@ const AddMarathon = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-gray-700">Location</label>
+                    <label className="block text-textSecondary">Location</label>
                     <input
                         type="text"
                         name="location"
@@ -154,7 +154,7 @@ const AddMarathon = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-gray-700">
+                    <label className="block text-textSecondary">
                         Running Distance
                     </label>
                     <input
@@ -167,7 +167,7 @@ const AddMarathon = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-gray-700">Description</label>
+                    <label className="block text-textSecondary">Description</label>
                     <textarea
                         name="description"
                         value={marathonDetails.description}
@@ -177,7 +177,7 @@ const AddMarathon = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-gray-700">
+                    <label className="block text-textSecondary">
                         Marathon Image URL
                     </label>
                     <input
@@ -192,7 +192,7 @@ const AddMarathon = () => {
 
                 <div className="flex justify-between gap-4 mb-4">
                     <div className="flex-1">
-                        <label className="block text-gray-700">Email</label>
+                        <label className="block text-textSecondary">Email</label>
                         <input
                             type="email"
                             name="email"
@@ -202,7 +202,7 @@ const AddMarathon = () => {
                         />
                     </div>
                     <div className="flex-1">
-                        <label className="block text-gray-700">Username</label>
+                        <label className="block text-textSecondary">Username</label>
                         <input
                             type="text"
                             name="name"

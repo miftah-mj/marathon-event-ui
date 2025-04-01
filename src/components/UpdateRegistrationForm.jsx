@@ -21,7 +21,7 @@ const UpdateRegistrationForm = ({ registration, onSubmit }) => {
     return (
         <form onSubmit={handleSubmit} className="w-96">
             <div className="mb-4">
-                <label className="block text-gray-700">First Name</label>
+                <label className="block text-textSecondary">First Name</label>
                 <input
                     type="text"
                     name="firstName"
@@ -32,7 +32,7 @@ const UpdateRegistrationForm = ({ registration, onSubmit }) => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Last Name</label>
+                <label className="block text-textSecondary">Last Name</label>
                 <input
                     type="text"
                     name="lastName"
@@ -43,7 +43,7 @@ const UpdateRegistrationForm = ({ registration, onSubmit }) => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Contact Number</label>
+                <label className="block text-textSecondary">Contact Number</label>
                 <input
                     type="text"
                     name="contactNumber"
@@ -54,7 +54,7 @@ const UpdateRegistrationForm = ({ registration, onSubmit }) => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Additional Info</label>
+                <label className="block text-textSecondary">Additional Info</label>
                 <textarea
                     name="additionalInfo"
                     value={updatedRegistration.additionalInfo}

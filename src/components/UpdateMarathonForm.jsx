@@ -23,7 +23,7 @@ const UpdateMarathonForm = ({ marathon, onSubmit }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="mb-4">
-                <label className="block text-gray-700">Marathon Title</label>
+                <label className="block text-textSecondary">Marathon Title</label>
                 <input
                     type="text"
                     name="marathonTitle"
@@ -34,7 +34,7 @@ const UpdateMarathonForm = ({ marathon, onSubmit }) => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Start Date</label>
+                <label className="block text-textSecondary">Start Date</label>
                 <input
                     type="date"
                     name="marathonStartDate"
@@ -45,7 +45,7 @@ const UpdateMarathonForm = ({ marathon, onSubmit }) => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700">Location</label>
+                <label className="block text-textSecondary">Location</label>
                 <input
                     type="text"
                     name="location"

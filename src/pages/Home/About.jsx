@@ -17,11 +17,11 @@ const About = () => {
             </div>
 
             {/* content Section */}
-            <div className="w-full md:flex-1 space-y-4 text-textSecondary">
-                <h6 className="text-xl font-raleway font-bold uppercase">
+            <div className="w-full md:flex-1 space-y-4">
+                <h6 className="text-xl font-raleway font-bold uppercase text-textSecondary">
                     About RunTrack
                 </h6>
-                <h2 className="text-3xl font-raleway text-textPrimary md:text-4xl font-bold mb-4 uppercase">
+                <h2 className="text-3xl font-raleway md:text-4xl font-bold mb-4 uppercase">
                     where runners become{" "}
                     <span className="text-accent">champions</span>
                 </h2>

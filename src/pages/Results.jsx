@@ -6,14 +6,14 @@ import "tailwindcss/tailwind.css";
 
 const results = [
     {
-        name: "John Doe",
+        name: "Mike Johnson",
         time: "2:45:30",
         position: 1,
         category: "Men's",
         event: "Marathon 2024",
     },
     {
-        name: "Jane Smith",
+        name: "Sarah Smith",
         time: "3:05:10",
         position: 2,
         category: "Women's",
